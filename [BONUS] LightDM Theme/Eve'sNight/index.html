@@ -1,0 +1,100 @@
+<!--
+    - Author: Emilio Rios Ochoa aka. Emilio Rivers
+    - Github: e-Rivers
+
+    - HTML structure of Eve's Night theme
+
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Emilio Rivers">
+        <meta name="viewport" content="width=device-width, viewport-fit=cover, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Eve's Night</title>
+    </head>
+    <body bgcolor="black">
+        <!-- Initial greeter screen -->
+        <div id="BackgroundImage"></div>
+        <h1 id="WelcomeMsg"></h1>
+
+        <!-- Post Key-Press screen -->
+        <div id="LoginScreen">
+            <!-- Login Box -->
+            <div id="LoginField" class="login-widgets">
+                <img draggable="false" id="LoginPicture">
+                <div id="LoginSidePicture">
+                    <h1 id="LoginMsg"></h1>
+                    <input type="password" id="LoginPassword" />
+                </div>
+                <!-- Overlay -->
+                <div class="login-widgets-overlay">
+                    <img draggable="false" class="widgets-icons-rect" src="assets/images/login.png" />
+                </div>
+            </div>
+            <!-- Session Box -->
+            <div id="SessionField" class="login-widgets">
+                <img draggable="false" id="SessionPicture">
+                <h1 id="SessionName"></h1>
+                <div class="login-widgets-overlay">
+                    <img draggable="false" class="widgets-icons-rect" src="assets/images/session.png" />
+                </div>
+            </div>
+            <!-- Sleep Box -->
+            <div id="SleepField" class="login-widgets">
+                <div class="login-widgets-static">
+                    <img draggable="false" class="widgets-icons-rect" src="assets/images/sleep.png" />
+                </div>
+            </div>
+            <!-- Calendar Box -->
+            <div id="CalendarField" class="login-widgets">
+                <p id="CalendarText"></p>
+                <!-- Overlay -->
+                <div class="login-widgets-overlay">
+                    <img draggable="false" class="widgets-icons-square" src="assets/images/calendar.png" />
+                </div>
+            </div>
+            <!-- Users Box -->
+            <div id="UsersField" class="login-widgets">
+                <img draggable="false" id="UserPicture">
+                <h1 id="UserName"><h1/>
+                <!-- Overlay -->
+                <div class="login-widgets-overlay">
+                    <img draggable="false" class="widgets-icons-square" src="assets/images/users.png" />
+                </div>
+            </div>
+            <!-- Reboot Box -->
+            <div id="RebootField" class="login-widgets">
+                <div class="login-widgets-static">
+                    <img draggable="false" class="widgets-icons-square" src="assets/images/reboot.png" />
+                </div>
+            </div>
+            <!-- Clock Box -->
+            <div id="ClockField" class="login-widgets">
+                <p id="ClockText"></p>
+                <!-- Overlay -->
+                <div class="login-widgets-overlay">
+                    <img draggable="false" class="widgets-icons-rect" src="assets/images/clock.png" />
+                </div>
+            </div>
+            <!-- Shutdown Box -->
+            <div id="ShutdownField" class="login-widgets">
+                <div class="login-widgets-static">
+                    <img draggable="false" class="widgets-icons-square" src="assets/images/shutdown.png" />
+                </div>
+            </div>
+
+        </div>
+        <!-- Black Cover for Auth Fade -->
+        <div id="BlackFade"></div>
+        <!-- JavaScript Loading -->
+        <script type="text/javascript" src="js/login-authentication.js"></script>
+        <script type="text/javascript" src="js/date-time.js"></script>
+        <script type="text/javascript" src="js/user-management.js"></script>
+        <script type="text/javascript" src="js/session-management.js"></script>
+        <script type="text/javascript" src="js/event-listeners.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>
