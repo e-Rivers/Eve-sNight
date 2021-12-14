@@ -46,7 +46,7 @@ alias lt="exa --icons --grid --all --tree --level 2"
 
 # Zsh Header Decors {{{
 
-"/home/$(whoami)/.zshBanners/$(ls /home/$(whoami)/.zshBanners | shuf -n 1)" 
+"/home/$(whoami)/.termHeaders/$(ls /home/$(whoami)/.termHeaders | shuf -n 1)" 
 
 # }}}
 
