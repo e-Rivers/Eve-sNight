@@ -46,7 +46,7 @@ alias lt="exa --icons --grid --all --tree --level 2"
 
 # Zsh Header Decors {{{
 
-"/etc/TUXconfig/SYSTEM/DECORATIONS/ZSH/$(ls /etc/TUXconfig/SYSTEM/DECORATIONS/ZSH | shuf -n 1)" 
+"/home/$(whoami)/.zshBanners/$(ls /home/$(whoami)/.zshBanners | shuf -n 1)" 
 
 # }}}
 
