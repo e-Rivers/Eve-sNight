@@ -1,0 +1,26 @@
+/** 
+vim:fileencoding=utf-8:foldmethod=marker
+
+░█▀▄░█▀█░█▀▀░▀█▀░░░█▀▀░█▀█░█▀█░█▀▀░▀█▀░█▀▀
+░█▀▄░█░█░█▀▀░░█░░░░█░░░█░█░█░█░█▀▀░░█░░█░█
+░▀░▀░▀▀▀░▀░░░▀▀▀░░░▀▀▀░▀▀▀░▀░▀░▀░░░▀▀▀░▀▀▀
+
+Author: Emilio Rivers (e-Rivers)
+**/
+
+configuration {
+	font:				        "VictorMono 10";
+    modi:                       [window,run,ssh,drun,windowcd,keys];
+    show-icons:                 true;
+    icon-theme:                 "Papirus";
+
+    kb-remove-char-back:        "BackSpace,Shift+BackSpace";
+    kb-mode-complete:           "Control+Alt+C";
+    kb-accept-entry:            "Control+m,Return,KP_Enter";
+    kb-remove-to-eol:           "Control+U";
+    kb-row-left:                "Control+h,Control+H";
+    kb-row-right:               "Control+l,Control+L";
+    kb-row-up:                  "Control+k,Control+K";
+    kb-row-down:                "Control+j,Control+J";
+}
+

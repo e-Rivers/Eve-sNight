@@ -1,0 +1,129 @@
+/*  vim:fileencoding=utf-8:foldmethod=marker
+ *  
+ *  ROFI WINDOW MODI CONFIGURATION THEME
+ *  
+ *  Author: Emilio Rivers (e-Rivers)
+ */
+
+* {
+    background:                     #000410;
+    foreground:                     #FFFFFF;
+    selected:                       #404A6399;
+    selected-background:            #404A6399;
+}
+
+configuration {
+    display-window:                 "💻";
+    window-format:                  "[{w}]\n{c:15}\n{t:15}";
+}
+
+window {
+    background-color:               Green;
+    border:                         3% 2% 3% 2%;
+    width:                          50%;
+    height:                         33.4%;
+}
+
+mainbox {
+    background-color:               @background;
+}
+
+listview {
+    spacing:                        1%;
+    padding:                        1% 0% 1% 0%;
+    background-color:               inherit;
+    columns:                        5;
+    dynamic:                        false;
+    lines:                          1;
+}
+
+element {
+    orientation:                    vertical;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    size:                           10% 50%;
+    padding:                        1% 0% 2% 0%;
+    background-color:               @background;
+    text-color:                     @foreground;
+}
+
+element-icon {
+    background-color:               #00000000;
+    size:                           10% 10%;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+}
+
+element-text {
+    background-color:               #00000000;
+    text-color:                     White;
+    margin:                         0.5% 1% 0% 1%;
+    vertical-align:                 0.5;
+    horizontal-align:               0.5;
+}
+
+element selected {
+    background-color:               @selected-background;
+    text-color:                     White;
+	border:							0% 0% 0.3% 0%;
+    border-radius:                  0% 0% 0% 0%;
+    border-color:                  	ForestGreen;
+}
+
+entry {
+    spacing:                        0;
+    placeholder:                    "Type to filter";
+    text-color:                     White;
+    border:                         0% 0% 0% 1%;
+    background-color:               @background;
+    blink:                          true;
+    expand:                         true;
+}
+
+prompt {
+    spacing:                        0;
+    background-color:               @background;
+    text-color:                     White;
+}
+
+inputbar {
+    children:                       [ prompt, entry, textbox-open-bkt, num-filtered-rows, textbox-slash, num-rows, textbox-close-bkt ];
+    padding:                        1%;
+    position:                       center;
+    background-color:               @background;
+	border:							0% 0% 0.3% 0%;
+    border-radius:                  0% 0% 0% 0%;
+	border-color:					ForestGreen;
+    expand:                         false;
+}
+
+num-filtered-rows {
+    background-color:               @background;
+    text-color:                     White;
+}
+
+num-rows {
+    background-color:               @background;
+    text-color:                     White;
+}
+
+textbox-slash {
+    expand:                         false;
+    str:                            "/";
+    background-color:               @background;
+    text-color:                     ForestGreen;
+}
+
+textbox-open-bkt {
+    expand:                         false;
+    str:                            "[";
+    background-color:               @background;
+    text-color:                     ForestGreen;
+}
+
+textbox-close-bkt {
+    expand:                         false;
+    str:                            "]";
+    background-color:               @background;
+    text-color:                     ForestGreen;
+}
