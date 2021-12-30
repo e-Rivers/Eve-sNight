@@ -1,0 +1,198 @@
+/*  vim:fileencoding=utf-8:foldmethod=marker
+ *  
+ *  ROFI GENERIC MODI CONFIGURATION THEME
+ *  
+ *  Author: Emilio Rivers (e-Rivers)
+ */
+
+* {
+    greenwarn:                      #B1FB30;
+    selected-active-foreground:     @greenwarn;
+    lightfg:                        @foreground;
+    separatorcolor:                 ForestGreen;
+    urgent-foreground:              @greenwarn;
+    alternate-urgent-background:    @lightbg;
+    lightbg:                        @background;
+    spacing:                        2;
+    border-color:                   @foreground;
+    normal-background:              @background;
+    background-color:               #000410;
+    alternate-active-background:    @lightbg;
+    active-foreground:              SteelBlue;
+    blue:                           MidnightBlue;
+    urgent-background:              @background;
+    alternate-normal-foreground:    @foreground;
+    selected-active-background:     @blue;
+    background:                     @background;
+    selected-normal-foreground:     @greenwarn;
+    active-background:              @background;
+    alternate-active-foreground:    @blue;
+    alternate-normal-background:    @lightbg;
+    foreground:                     White;
+    selected-urgent-background:     @greenwarn;
+    selected-urgent-foreground:     @background;
+    normal-foreground:              @foreground;
+    alternate-urgent-foreground:    @greenwarn;
+    selected-normal-background:     #404A6399;
+}
+
+element {
+    padding:                        1px ;
+    spacing:                        5px ;
+    border:                         0;
+    cursor:                         pointer;
+}
+
+element normal.normal {
+    background-color:               @normal-background;
+    text-color:                     @normal-foreground;
+}
+
+element normal.urgent {
+    background-color:               @urgent-background;
+    text-color:                     @urgent-foreground;
+}
+
+element normal.active {
+    background-color:               @active-background;
+    text-color:                     @active-foreground;
+}
+
+element selected.normal {
+    background-color:               @selected-normal-background;
+    text-color:                     @selected-normal-foreground;
+}
+
+element selected.urgent {
+    background-color:               @selected-urgent-background;
+    text-color:                     @selected-urgent-foreground;
+}
+
+element selected.active {
+    background-color:               @selected-active-background;
+    text-color:                     @selected-active-foreground;
+}
+
+element alternate.normal {
+    background-color:               @alternate-normal-background;
+    text-color:                     @alternate-normal-foreground;
+}
+
+element alternate.urgent {
+    background-color:               @alternate-urgent-background;
+    text-color:                     @alternate-urgent-foreground;
+}
+
+element alternate.active {
+    background-color:               @alternate-active-background;
+    text-color:                     @alternate-active-foreground;
+}
+
+element-text {
+    background-color:               #00000000;
+    text-color:                     inherit;
+    highlight:                      inherit;
+    cursor:                         inherit;
+}
+
+element-icon {
+    background-color:               #00000000;
+    size:                           1.0000em ;
+    text-color:                     inherit;
+    cursor:                         inherit;
+}
+
+window {
+    padding:                        5;
+    background-color:               @background;
+    border:                         2% 1% 2% 1%;
+    border-color:                   DarkGreen;
+}
+
+message {
+    padding:                        1px ;
+    border-color:                   @separatorcolor;
+    border:                         2px dash 0px 0px ;
+}
+
+textbox {
+    text-color:                     @foreground;
+}
+
+listview {
+    padding:                        2px 0px 0px ;
+    scrollbar:                      true;
+    border-color:                   @separatorcolor;
+    spacing:                        2px ;
+    fixed-height:                   0;
+    border:                         2px dash 0px 0px ;
+}
+
+scrollbar {
+    width:                          4px ;
+    padding:                        0;
+    handle-width:                   8px ;
+    border:                         0;
+    handle-color:                   @blue;
+}
+
+sidebar {
+    border-color:                   @separatorcolor;
+    border:                         2px dash 0px 0px ;
+}
+
+button {
+    spacing:                        0;
+    text-color:                     @normal-foreground;
+    cursor:                         pointer;
+}
+
+button selected {
+    background-color:               @selected-normal-background;
+    text-color:                     @selected-normal-foreground;
+}
+
+
+num-filtered-rows, num-rows {
+    text-color:                     grey;
+    expand:                         false;
+}
+
+textbox-num-sep {
+    text-color:                     grey;
+    expand:                         false;
+    str:                            "/";
+}
+
+inputbar {
+    padding:                        1px ;
+    spacing:                        0px ;
+    text-color:                     @normal-foreground;
+    children:                       [ prompt,textbox-prompt-colon,entry, num-filtered-rows, textbox-num-sep, num-rows, case-indicator ];
+}
+
+case-indicator {
+    spacing:                        0;
+    text-color:                     @normal-foreground;
+}
+
+entry {
+    spacing:                        0;
+    text-color:                     @normal-foreground;
+    placeholder-color:              grey;
+    placeholder:                    "Type to filter";
+    cursor:                         text;
+}
+
+prompt {
+    spacing:                        0;
+    text-color:                     @normal-foreground;
+}
+
+textbox-prompt-colon {
+    margin:                         0px 0.3000em 0.0000em 0.0000em ;
+    expand:                         false;
+    str:                            ":";
+    text-color:                     inherit;
+}
+

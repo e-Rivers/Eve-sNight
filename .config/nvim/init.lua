@@ -35,9 +35,11 @@ vim.api.nvim_set_keymap("x", "<Leader>nn", "<Esc>", {noremap=true})
 vim.api.nvim_set_keymap("n", "<Leader>bb", ":buffers<CR>", {noremap=true, silent=true})
 vim.api.nvim_set_keymap("n", "<Leader>bp", ":bprevious<CR>", {noremap=true, silent=true})
 vim.api.nvim_set_keymap("n", "<Leader>bn", ":bnext<CR>", {noremap=true, silent=true})
+vim.api.nvim_set_keymap("n", "<Leader>bd", ":bdelete<CR>", {noremap=true, silent=true})
 -- Navigation between tabs
 vim.api.nvim_set_keymap("n", "<Leader>tp", ":tabprevious<CR>", {noremap=true, silent=true})
 vim.api.nvim_set_keymap("n", "<Leader>tn", ":tabnext<CR>", {noremap=true, silent=true})
+vim.api.nvim_set_keymap("n", "<Leader>tc", ":tabclose<CR>", {noremap=true, silent=true})
 -- Navigation between split panes
 vim.api.nvim_set_keymap("n", "<Leader>wh", ":wincmd h<CR>", {noremap=true, silent=true})
 vim.api.nvim_set_keymap("n", "<Leader>wj", ":wincmd j<CR>", {noremap=true, silent=true})
@@ -52,6 +54,8 @@ vim.api.nvim_set_keymap("n", "<Leader>term", ":split | terminal<CR>", {noremap=t
 -- Move through filesystem
 vim.api.nvim_set_keymap("n", "<C-h>", ":cd ..<CR>", {noremap=true, silent=true})
 vim.api.nvim_set_keymap("n", "<C-t>", ":cd /<CR>", {noremap=true, silent=true})
+-- Exit terminal mode
+vim.api.nvim_set_keymap("t", "<Leader>nn", "<C-\\><C-n>", {noremap=true, silent=true})
 
 -- }}}
 
