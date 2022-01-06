@@ -1,6 +1,6 @@
 /*  vim:fileencoding=utf-8:foldmethod=marker
  *  
- *  ROFI GENERIC MODI CONFIGURATION THEME
+ *  ROFI CUSTOM WIFI MODI CONFIGURATION THEME
  *  
  *  Author: Emilio Rivers (e-Rivers)
  */
@@ -12,9 +12,7 @@
 }
 
 element {
-    padding:                        0.1% ;
     spacing:                        0.5% ;
-    border:                         0;
     cursor:                         pointer;
 }
 
@@ -78,9 +76,11 @@ element-icon {
 }
 
 window {
-    padding:                        5;
+    padding:                        0.75% 0.5% 0.75% 0.5%;
     border:                         2% 1% 2% 1%;
-    border-color:                   DarkGreen;
+    border-color:                   @regular-green;
+    width:                          22.5%;
+    height:                         40%;
 }
 
 message {
@@ -95,20 +95,11 @@ textbox {
 
 listview {
     padding:                        0.5% 0% 0%;
-    scrollbar:                      true;
+    scrollbar:                      false;
     border-color:                   @separatorcolor;
     spacing:                        0.5%;
     fixed-height:                   0;
     border:                         0.4% solid 0.3% solid;
-}
-
-scrollbar {
-    width:                          1%;
-    handle-color:                   @dark-blue;
-}
-
-sidebar {
-    border-color:                   @separatorcolor;
 }
 
 button {
@@ -121,33 +112,16 @@ button selected {
     text-color:                     @selected-normal-foreground;
 }
 
-
-num-filtered-rows, num-rows {
-    text-color:                     grey;
-    expand:                         false;
-}
-
-textbox-num-sep {
-    text-color:                     grey;
-    expand:                         false;
-    str:                            "/";
-}
-
 inputbar {
     padding:                        0.1%;
     text-color:                     @normal-foreground;
-    children:                       [ prompt,textbox-prompt-colon,entry, num-filtered-rows, textbox-num-sep, num-rows, case-indicator ];
-}
-
-case-indicator {
-    spacing:                        0;
-    text-color:                     @normal-foreground;
+    children:                       [ prompt, entry ];
 }
 
 entry {
     text-color:                     @normal-foreground;
     placeholder-color:              grey;
-    placeholder:                    "Type to filter";
+    placeholder:                    "Manually enter the SSID";
     cursor:                         text;
 }
 
@@ -155,10 +129,4 @@ prompt {
     text-color:                     @normal-foreground;
 }
 
-textbox-prompt-colon {
-    margin:                         0% 0.3000em 0.0000em 0.0000em ;
-    expand:                         false;
-    str:                            ":";
-    text-color:                     inherit;
-}
 

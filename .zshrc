@@ -61,8 +61,9 @@ source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring
 
 # Key Bindings {{{
 
-bindkey "^[l" forward-word                      # To partially autocomplete autosuggestions
-bindkey "^[h" backward-kill-word                # To partially go backwards autosuggestions
+bindkey "^[l" forward-word                      # To go forward a word (and complete autosuggestions)
+bindkey "^[h" backward-word                     # To go backwards a word
+bindkey "^[b" backward-kill-word                # To delete a word backwards on autosuggestions
 bindkey "^[[3~" delete-char                     # To enable supr key 
 bindkey "^[k" history-substring-search-up       # To partially search similar commands (Up)
 bindkey "^[j" history-substring-search-down     # To partially search similar commands (Down)

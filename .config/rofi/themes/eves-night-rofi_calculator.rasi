@@ -11,6 +11,10 @@
     background-color:               @background;
 }
 
+configuration {
+    display-calc:                 " ";
+}
+
 element {
     padding:                        0.1% ;
     spacing:                        0.5% ;
@@ -80,7 +84,9 @@ element-icon {
 window {
     padding:                        5;
     border:                         2% 1% 2% 1%;
-    border-color:                   DarkGreen;
+    border-color:                   @regular-green;
+    width:                          30%;
+    height:                         23%;
 }
 
 message {
@@ -121,33 +127,16 @@ button selected {
     text-color:                     @selected-normal-foreground;
 }
 
-
-num-filtered-rows, num-rows {
-    text-color:                     grey;
-    expand:                         false;
-}
-
-textbox-num-sep {
-    text-color:                     grey;
-    expand:                         false;
-    str:                            "/";
-}
-
 inputbar {
     padding:                        0.1%;
     text-color:                     @normal-foreground;
-    children:                       [ prompt,textbox-prompt-colon,entry, num-filtered-rows, textbox-num-sep, num-rows, case-indicator ];
-}
-
-case-indicator {
-    spacing:                        0;
-    text-color:                     @normal-foreground;
+    children:                       [ prompt,textbox-prompt-colon,entry ];
 }
 
 entry {
     text-color:                     @normal-foreground;
     placeholder-color:              grey;
-    placeholder:                    "Type to filter";
+    placeholder:                    "Enter an operation";
     cursor:                         text;
 }
 

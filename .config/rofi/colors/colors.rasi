@@ -1,0 +1,46 @@
+/*  vim:fileencoding=utf-8:foldmethod=marker
+ *  
+ *  ROFI COLOR SCHEME DEFINITION THEME
+ *  
+ *  Author: Emilio Rivers (e-Rivers)
+ */
+
+* {
+    /* Extra Colors definitions */
+    img-gradient:                   linear-gradient(DarkGreen, MidnightBlue);
+    transparent:                    #00000000;
+    light-green:                    #B1FB30;
+    eves-blue:                      #00103E;
+    main-blue:                      #000410;
+    secondary-blue:                 MidnightBlue;
+    light-blue:                     SteelBlue;
+    dark-blue:                      #091661;
+    dark-green:                     DarkGreen;
+    main-green:                     ForestGreen;
+    regular-green:                  Green;
+    separatorcolor:                 @main-green;
+    border-color:                   @foreground;
+    selection-color:                #404A6399;
+    /* Background variants */
+    background:                     @main-blue;
+    urgent-background:              @eves-blue;
+    normal-background:              @background;
+    active-background:              @background;
+    selected-active-background:     @dark-blue;
+    selected-normal-background:     @selection-color;
+    selected-urgent-background:     @light-green;
+    alternate-active-background:    @background;
+    alternate-normal-background:    @background;
+    alternate-urgent-background:    @background;
+    /* Foreground variants */
+    foreground:                     White;
+    urgent-foreground:              @light-green;
+    normal-foreground:              @foreground;
+    active-foreground:              @light-blue;
+    selected-active-foreground:     @light-green;
+    selected-normal-foreground:     @light-green;
+    selected-urgent-foreground:     @background;
+    alternate-active-foreground:    @light-blue;
+    alternate-normal-foreground:    @foreground;
+    alternate-urgent-foreground:    @light-green;
+}

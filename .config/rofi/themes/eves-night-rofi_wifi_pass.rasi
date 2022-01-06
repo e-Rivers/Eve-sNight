@@ -1,0 +1,43 @@
+/*  vim:fileencoding=utf-8:foldmethod=marker
+ *  
+ *  ROFI CUSTOM WIFI MODI CONFIGURATION THEME
+ *  
+ *  Author: Emilio Rivers (e-Rivers)
+ */
+
+@import "../colors/colors.rasi"
+
+* {
+    background-color:               @background;
+}
+
+window {
+    padding:                        5;
+    border:                         2% 1% 2% 1%;
+    border-color:                   @regular-green;
+    width:                          20%;
+    children:                       [ inputbar ];
+}
+
+textbox {
+    text-color:                     @foreground;
+}
+
+inputbar {
+    padding:                        0.1%;
+    text-color:                     @normal-foreground;
+    children:                       [ prompt, entry ];
+}
+
+entry {
+    text-color:                     @normal-foreground;
+    placeholder-color:              grey;
+    placeholder:                    "Write the network's password\nIf done before, leave empty";
+    cursor:                         text;
+}
+
+prompt {
+    text-color:                     @normal-foreground;
+}
+
+

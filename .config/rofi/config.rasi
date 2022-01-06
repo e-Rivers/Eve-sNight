@@ -9,19 +9,16 @@ Author: Emilio Rivers (e-Rivers)
 **/
 
 configuration {
-	font:				        "VictorMono 10";
+    font:                       "VictorMono Nerd Font 10";
     modi:                       [window,run,ssh,drun,windowcd,keys];
     show-icons:                 true;
     icon-theme:                 "Papirus";
 
-    kb-remove-char-back:        "BackSpace,Shift+BackSpace";
-    kb-mode-complete:           "Control+Alt+C";
-    kb-accept-entry:            "Control+m,Return,KP_Enter";
     kb-remove-to-eol:           "Control+U";
-    kb-row-left:                "Control+h,Control+H";
-    kb-row-right:               "Control+l,Control+L";
-    kb-row-up:                  "Control+k,Control+K";
-    kb-row-down:                "Control+j,Control+J";
+    kb-row-left:                "Alt+h,Alt+H";
+    kb-row-right:               "Alt+l,Alt+L";
+    kb-row-up:                  "Alt+k,Alt+K";
+    kb-row-down:                "Alt+j,Alt+J";
 }
 
 @theme                          "themes/eves-night-rofi_generic.rasi"
