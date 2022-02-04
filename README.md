@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="25%" src="https://github.com/elenapan.png" />
+  <img width="25%" src="https://lh3.googleusercontent.com/elUWu-5bafujfoKMTA_IwZrI9x24xxmFtgIGnxnZnfWG9nBL8VCc3GfGRYMIkEmE-NxQduqOFQB9mMym7aAcKA__lTzovhJke1Cl3N9ABVJUfTyX4vZ01PlLZJdg7hb8F5UVh6k0k266Z_28TOEYUhRyVcfOlOZy6UwFdN_16qoiAr_cm7w-FrJomyMVrAOjPWMZQQUH5gEFxFjaafqhg60sD1yco5j-MGDCO-rD9DLE9GVYpvdFfxs1WcJ90lND5_YuBatp61Di9BAPLnhhUzGRDlGy57AW99QR9-1w7VZbM-SCz0wtC9JZ8RgIeRFUEu3FPDOZ1DgBDLnU6PBmctTia49djRGRK3SHrcpzd3eLsXnj6RgXS7GlbJIyaSiwHTBkXKlbyM14k3pfMaDUj0cs_1PjPhL_vHsfhvMJd_Pt-ILlLxBaWILDFE34K23IMI3e0S7cwIEI1iLNyn6f_JIbNIPohMxs3VLvBUwd8-GodZklMg8NwtdsXt4ERVCmMBzuIfRCrYehe5tUgN0JyBt0CwndsLs_j_TRGjJeLm8APi52_itOBg0_bIgG6GPEONispuE4Rc6fhvJT660sz0_WuvYACUDZinYfBjXkwQ1ddvEiZfefxsFA-mv3vNZp-BhV-J41o5M29cWbnhsQFI-4T6iyhCycSilr3cnMTiKkCmfBRa1ly1dj3f7duPI6fgrQyt8AJjwIeAPOwHRwmNwp=s600-no?authuser=0" />
 </p>
 
 <p align="center">
