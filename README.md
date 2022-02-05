@@ -1,11 +1,13 @@
 <p align="center">
-  <img width="25%" src="https://lh3.googleusercontent.com/elUWu-5bafujfoKMTA_IwZrI9x24xxmFtgIGnxnZnfWG9nBL8VCc3GfGRYMIkEmE-NxQduqOFQB9mMym7aAcKA__lTzovhJke1Cl3N9ABVJUfTyX4vZ01PlLZJdg7hb8F5UVh6k0k266Z_28TOEYUhRyVcfOlOZy6UwFdN_16qoiAr_cm7w-FrJomyMVrAOjPWMZQQUH5gEFxFjaafqhg60sD1yco5j-MGDCO-rD9DLE9GVYpvdFfxs1WcJ90lND5_YuBatp61Di9BAPLnhhUzGRDlGy57AW99QR9-1w7VZbM-SCz0wtC9JZ8RgIeRFUEu3FPDOZ1DgBDLnU6PBmctTia49djRGRK3SHrcpzd3eLsXnj6RgXS7GlbJIyaSiwHTBkXKlbyM14k3pfMaDUj0cs_1PjPhL_vHsfhvMJd_Pt-ILlLxBaWILDFE34K23IMI3e0S7cwIEI1iLNyn6f_JIbNIPohMxs3VLvBUwd8-GodZklMg8NwtdsXt4ERVCmMBzuIfRCrYehe5tUgN0JyBt0CwndsLs_j_TRGjJeLm8APi52_itOBg0_bIgG6GPEONispuE4Rc6fhvJT660sz0_WuvYACUDZinYfBjXkwQ1ddvEiZfefxsFA-mv3vNZp-BhV-J41o5M29cWbnhsQFI-4T6iyhCycSilr3cnMTiKkCmfBRa1ly1dj3f7duPI6fgrQyt8AJjwIeAPOwHRwmNwp=s600-no?authuser=0" />
+  <img width="25%" src="https://lh3.googleusercontent.com/pw/AM-JKLXc3sjD7bFQFvs8HP-d6i5p2MaqVIft4d_vRww0yHc2T7LaKCJWVWe8tJMQaJq5WPSE7QYjkeDuDpC5vSzqN-e7fNgd-tNOfvjhhxdnTZx51jMJsDBgtJwWU8n5nO5VvY1MxIUrGy0D5CQnVFaAEy6T=s600-no?authuser=0" />
 </p>
 
-<p align="center">
-  <b>🎀 Elena's configuration files 🎀</b>
-</p>
+<div align="center">
+  <h1>Eve's Night OS</h1>
+  <i>Emilio Rivers' Linux dotfiles and LightDM configuration</i>
+</div>
 
+<br/>
 <p align="center">
 <a href="#setup"><img width="150px" style="padding: 0 10px;" src=".assets/setup.png"></a>
 <a href="https://github.com/elenapan/dotfiles/wiki"><img width="150px" style="padding: 0 10px;" src=".assets/wiki.png"></a>
@@ -13,41 +15,41 @@
 <a href="#tipjar"><img width="150px" style="padding: 0 10px;" src=".assets/tipjar.png"></a>
 </p>
 
+<br />
+This is not really an Operating System, but you already knew that... These are my personal dotfiles for the Awesome Window Manager, Light Display Manager, Kitty Terminal Emulator and much more stuff to rice Arch Linux. Feel free to take whatever you need and like, 
 
-### Thanks for dropping by!
+## S P E C S
 
 <img src="https://raw.githubusercontent.com/wiki/elenapan/dotfiles/assets/amarena.png" alt="img" align="right" width="400px">
 
-This is my personal collection of configuration files.
++ **Window Manager**: AwesomeWM
++ **Linux Distro**: I use Arch, BTW
++ **Shell**: zsh
++ **Terminal**: kitty
++ **Text Editor**: Neovim
++ **Display Manager**: LightDM
++ **File Manager**: Thunar
++ **Launcher**: rofi
++ **Browser**: Brave (with NightTab extension)
 
-You are probably here for my AwesomeWM configuration.
+## F E A T U R E S
 
-The [setup section](#setup) will guide you through the installation process.
+- Dashboard with useful utilities (weather forecast, night light, upgrades information)
+- Cool layouts such as deck and centered layout (Thanks to <a href="https://github.com/BlingCorp/bling">Bling</a> project)
+- LightDM theme with support for profile pictures and multiple sessions
+- Rofi wifi menu (doesn't work on complex connections, such as WPA2 Enterprise)
 
-Here are some details about my setup:
+## D E P E N D E N C I E S
+| Package | Why is it needed? |
+| --- | --- |
+| `awesome-git` | Well, its the graphical session the user will be logged in into, <i>ergo</i>, is the base of the system and it's awesome |
+| `rofi` | Used as application launcher, wifi menu, calculator, powermenu, etc |
+| `lightdm`  <br/>`light-locker`<br/> `lightdm-webkit2-greeter` | Display manager and lock screen (optional if you use another one) |
+| `pulseaudio` | Audio input and output management, you could use other one like <i>amixer</i> but you would have to reconfigure the dotfiles |
+| `networkmanager` | Network management, you could use other one like <i>netctl</i> but you would have to reconfigure the dotfiles |
+| `VictorMono Nerd Font` | Font used by all apps (I personally like it because it makes italics look cursive). Again, you can use other one but you'll have to reconfigure the dotfiles |
 
-+ **WM**: [AwesomeWM](https://github.com/awesomeWM/awesome/) 💙 config included!
-+ **OS**: Arch Linux
-+ **Shell**: [zsh](https://wiki.archlinux.org/index.php/Zsh)
-+ **Terminal**: [kitty](https://github.com/kovidgoyal/kitty/) 💙 config included!
-+ **Editor**: [Neovim](https://github.com/neovim/neovim/) 💙 config included!
-+ **Org editor**: [Doom Emacs](https://github.com/hlissner/doom-emacs/)
-+ **File Manager**: [Thunar](https://git.xfce.org/xfce/thunar/)
-+ **Launcher**: [rofi](https://github.com/davatorium/rofi/) 💙 config included!
-+ **Browser**: Firefox
-
-## New stuff
-
-- New release: Code name `amarena`
-- Brand new sidebar theme
-- Revamped dashboard: now with corona stats for your country of choice
-- Mini window switcher / manager activated with <kbd>super + tab</kbd>. Check out all its features [here](https://github.com/elenapan/dotfiles/wiki/Desktop-elements#window-switcher)
-- Custom mouse-friendly `ncmpcpp` UI
-- Adorable battery indicator
-- Support for [PAM authentication](https://wiki.archlinux.org/index.php/PAM) through the built-in lock screen
-- Cleaner code (but no one will notice)
-
-## Setup
+## I N S T A L L A T I O N
 
 Here are the instructions you should follow to replicate my AwesomeWM setup.
 
@@ -277,69 +279,5 @@ After setting up my AwesomeWM configuration, inside `~/.config/awesome` you will
    They provide an easy way of writing widgets that rely on external information. All you need to do is subscribe to the signal a daemon provides.
    No need to remember which shell command gives you the necessary info or bother about killing orphan processes. Evil takes care of everything.
 
-## Keybinds
+## S C R E E N S H O T S
 
-I use <kbd>super</kbd> AKA Windows key as my main modifier.
-
-#### Keyboard
-| Keybind | Action |
-| --- | --- |
-| <kbd>super + enter</kbd> | Spawn terminal |
-| <kbd>super + shift + enter</kbd> | Spawn floating terminal |
-| <kbd>super + d</kbd> | Launch rofi |
-| <kbd>super + shift + q</kbd> | Close client |
-| <kbd>super + control + space</kbd> | Toggle floating client |
-| <kbd>super + [1-0]</kbd> | View tag AKA change workspace (for you i3 folks) |
-| <kbd>super + shift + [1-0]</kbd> | Move focused client to tag |
-| <kbd>super + s</kbd> | Tiling layout |
-| <kbd>super + shift + s</kbd> | Floating layout |
-| <kbd>super + w</kbd> | Maximized / Monocle layout |
-| <kbd>super + [arrow keys]</kbd> | Change focus by direction |
-| <kbd>super + [hjkl]</kbd> | ^ |
-| <kbd>super + shift + [arrow keys]</kbd> | Move client by direction. Move to edge if it is floating. |
-| <kbd>super + shift + [hjkl]</kbd> | ^ |
-| <kbd>super + control + [arrow keys]</kbd> | Resize client |
-| <kbd>super + control + [hjkl]</kbd> | ^ |
-| <kbd>super + f</kbd> | Toggle fullscreen |
-| <kbd>super + m</kbd> | Toggle maximize |
-| <kbd>super + n</kbd> | Minimize |
-| <kbd>super + shift + n</kbd> | Restore minimized |
-| <kbd>super + c</kbd> | Center floating client |
-| <kbd>super + u</kbd> | Jump to urgent client (or back to last tag if there is no such client) |
-| <kbd>super + b</kbd> | Toggle bar |
-| <kbd>super + =</kbd> | Toggle tray |
-
-*... And many many more.*
-
-#### Mouse on the desktop
-| Mousebind | Action |
-| --- | --- |
-| `left click` | Dismiss all notifications, close sidebar and main menu |
-| `double left click` | Jump to urgent client (or back to last tag if there is no such client) |
-| `right click` | App drawer |
-| `middle click` | Dashboard |
-| `scroll up/down` | Cycle through tags |
-| `move to screen edge` | Show sidebar |
-
-#### Mouse on window titlebars
-| Mousebind | Action |
-| --- | --- |
-| `left click` | Focus and raise |
-| `left click (drag)` | Move |
-| `right click (drag)` | Resize |
-| `middle click` | Close |
-
-### Notes
-If you have any questions or issues, first check if you can find your answer in the [wiki](https://github.com/elenapan/dotfiles/wiki).
-Then you can search in the repository's [issues](https://github.com/elenapan/dotfiles/issues) or make a new issue.
-
-### Tipjar
-If you enjoy my themes and would like to show your appreciation, you may tip me here.
-
-It is never required but always appreciated.
-
-Thank you from the bottom of my heart! 💙
-
-- [**Patreon**](https://www.patreon.com/elenapan)
-- **Ethereum**: 0x831539d94155C797f786e99f1D061BEc7F11bD38
-- **Bitcoin**: 12j3D4KR94LY7Svvmp3KzGbfGC4YCZkCLe
