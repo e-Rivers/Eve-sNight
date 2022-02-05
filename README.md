@@ -32,6 +32,9 @@ This is not really an Operating System, but you already knew that... These are m
 + **Launcher**: rofi
 + **Browser**: Brave (with NightTab extension)
 
+<br />
+<br />
+
 ## F E A T U R E S
 
 - Dashboard with useful utilities (weather forecast, night light, upgrades information)
