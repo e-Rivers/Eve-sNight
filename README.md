@@ -20,7 +20,7 @@ This is not really an Operating System, but you already knew that... These are m
 
 ## S P E C S
 
-<img src="https://raw.githubusercontent.com/wiki/elenapan/dotfiles/assets/amarena.png" alt="img" align="right" width="400px">
+<img src="https://lh3.googleusercontent.com/pw/AM-JKLUU9qAo97nH8DLgvQ0Dkd1zZYJtOu-dj11nH-5apH7jxpgOV3U23mVTUeC0dfvv8WoVhmNzbcyMIXyBNyNMxTXrNIO12EB_KxSnjMwX51nArMxNffyZLPAQYtcaHwNJRbpBPUnmFVpn_m1qqvm34yIr=w879-h649-no?authuser=0" alt="img" align="right" width="400px">
 
 + **Window Manager**: AwesomeWM
 + **Linux Distro**: I use Arch, BTW
