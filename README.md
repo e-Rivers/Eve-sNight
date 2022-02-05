@@ -41,6 +41,7 @@ This is not really an Operating System, but you already knew that... These are m
 - Cool layouts such as deck and centered layout (Thanks to <a href="https://github.com/BlingCorp/bling">Bling</a> project)
 - LightDM theme with support for profile pictures and multiple sessions
 - Rofi wifi menu (doesn't work on complex connections, such as WPA2 Enterprise)
+- Different wallpapers on each tag (useful to know in which one you are when the dock is hidden)
 
 ## D E P E N D E N C I E S
 | Package | Why is it needed? |
