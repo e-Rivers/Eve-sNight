@@ -56,6 +56,9 @@ vim.api.nvim_set_keymap("n", "<C-h>", ":cd ..<CR>", {noremap=true, silent=true})
 vim.api.nvim_set_keymap("n", "<C-t>", ":cd /<CR>", {noremap=true, silent=true})
 -- Exit terminal mode
 vim.api.nvim_set_keymap("t", "<Leader>nn", "<C-\\><C-n>", {noremap=true, silent=true})
+-- Change selection mode
+vim.api.nvim_set_keymap("n", "<Leader>sc", ":set mouse=c<CR>", {noremap=true, silent=true})
+vim.api.nvim_set_keymap("n", "<Leader>sv", ":set mouse=a<CR>", {noremap=true, silent=true})
 
 -- }}}
 

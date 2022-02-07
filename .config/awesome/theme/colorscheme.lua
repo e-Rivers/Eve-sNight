@@ -27,6 +27,8 @@ colors.col_1X = "#FFFB00"
 colors.col_2X = "#8275F1"           
 colors.col_3X = "#00FF00"           
 colors.col_4X = "#303749"
+colors.col_5X = "#07A40A"
+colors.col_6X = "#066418"
 colors.transparent = "#00000000"
 
 return colors

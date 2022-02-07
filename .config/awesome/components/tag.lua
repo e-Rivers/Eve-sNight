@@ -27,5 +27,15 @@ awful.screen.connect_for_each_screen(function (scr)
    create_tag("9", icon.png.white_w9, 8, false)
    create_tag("0", icon.png.white_w0, 5, false)
 
+--           for s = 1, screen.count() do
+--            for t = 1, 6 do
+--          tags[s][t]:connect_signal("property::selected", function (tag)
+--           if not tag.selected then return end
+--           theme.wallpaper = "/home/chatea_s/.config/awesome/wallpaper/" .. t .. ".\
+--jpg"
+--             gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+--	end)
+--    end
+--end
 
 end)

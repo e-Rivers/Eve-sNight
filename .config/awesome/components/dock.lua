@@ -15,7 +15,7 @@ awful.screen.connect_for_each_screen(function (scr)
       height = panel_size[2],
       width = panel_size[1],
       screen = scr,
-      visible = true,
+      visible = false,
       bg = {
         type = "linear",
         from = { 0, panel_size[2]/2  },
@@ -61,6 +61,7 @@ awful.screen.connect_for_each_screen(function (scr)
       widget:buttons({
          awful.button({}, 1, function()
             if spawn.visible == false then
+                awesome.emit_signal("dashboard::update_info")
                spawn.visible = true
             else
                spawn.visible = false
@@ -70,7 +71,7 @@ awful.screen.connect_for_each_screen(function (scr)
       return widget
    end
 
-   local dashboard_button = create_widget_spawner(icon.png.launcher, dashboard)
+   local dashboard_button = create_widget_spawner(icon.png.logo_dark, dashboard)
 
    local btn_tag = awful.button({}, 1, function(t) t:view_only() end)
    local taglist = awful.widget.taglist {                                            

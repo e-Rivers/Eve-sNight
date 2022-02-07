@@ -11,13 +11,15 @@ local colors = require("theme.colorscheme")
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
 
+local HOME = os.getenv("HOME")
+
 local theme = {}
 
 theme.font          = "VictorMono Nerd Font 8"
 
 theme.bg_normal = colors.backTwo
-theme.bg_focus = color.color3
-theme.bg_urgent = color.color1
+theme.bg_focus = colors.col_6X
+theme.bg_urgent = colors.col_2D
 theme.bg_minimize = colors.col_2D
 theme.bg_systray = colors.col_4D
 
@@ -90,32 +92,31 @@ theme.bg_widget = color.background
 theme.fg_widget = color.foreground
 
 -- You can use your own layout icons like this:
-theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
-theme.layout_fairv = themes_path.."default/layouts/fairvw.png"
-theme.layout_floating  = themes_path.."default/layouts/floatingw.png"
-theme.layout_magnifier = themes_path.."default/layouts/magnifierw.png"
-theme.layout_max = themes_path.."default/layouts/maxw.png"
-theme.layout_fullscreen = themes_path.."default/layouts/fullscreenw.png"
-theme.layout_tilebottom = themes_path.."default/layouts/tilebottomw.png"
-theme.layout_tileleft   = themes_path.."default/layouts/tileleftw.png"
-theme.layout_tile = themes_path.."default/layouts/tilew.png"
-theme.layout_tiletop = themes_path.."default/layouts/tiletopw.png"
-theme.layout_spiral  = themes_path.."default/layouts/spiralw.png"
-theme.layout_dwindle = themes_path.."default/layouts/dwindlew.png"
-theme.layout_cornernw = themes_path.."default/layouts/cornernww.png"
-theme.layout_cornerne = themes_path.."default/layouts/cornernew.png"
-theme.layout_cornersw = themes_path.."default/layouts/cornersww.png"
-theme.layout_cornerse = themes_path.."default/layouts/cornersew.png"
+theme.layout_fairh          = HOME.."/.config/awesome/theme/icons/layouts/fairh.png"
+theme.layout_fairv          = HOME.."/.config/awesome/theme/icons/layouts/fairv.png"
+theme.layout_floating       = HOME.."/.config/awesome/theme/icons/layouts/floating.png"
+theme.layout_magnifier      = HOME.."/.config/awesome/theme/icons/layouts/magnifier.png"
+theme.layout_max            = HOME.."/.config/awesome/theme/icons/layouts/max.png"
+theme.layout_fullscreen     = HOME.."/.config/awesome/theme/icons/layouts/fullscreen.png"
+theme.layout_tilebottom     = HOME.."/.config/awesome/theme/icons/layouts/tilebottom.png"
+theme.layout_tileleft       = HOME.."/.config/awesome/theme/icons/layouts/tileleft.png"
+theme.layout_tile           = HOME.."/.config/awesome/theme/icons/layouts/tile.png"
+theme.layout_tiletop        = HOME.."/.config/awesome/theme/icons/layouts/tiletop.png"
+theme.layout_spiral         = HOME.."/.config/awesome/theme/icons/layouts/spiral.png"
+theme.layout_dwindle        = HOME.."/.config/awesome/theme/icons/layouts/dwindle.png"
+theme.layout_cornernw       = HOME.."/.config/awesome/theme/icons/layouts/cornernw.png"
+theme.layout_cornerne       = HOME.."/.config/awesome/theme/icons/layouts/cornerne.png"
+theme.layout_cornersw       = HOME.."/.config/awesome/theme/icons/layouts/cornersw.png"
+theme.layout_cornerse       = HOME.."/.config/awesome/theme/icons/layouts/cornerse.png"
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
 -- theme.icon_theme = nil
 
-theme.notification_border_width = 0
-theme.notification_bg = theme.bg_normal
-theme.notification_border_color = theme.bg_normal
-theme.notification_width = dpi(400)
-theme.notification_max_width = dpi(600)
+theme.notification_border_width = 2
+theme.notification_bg = colors.backThree
+theme.notification_border_color = colors.col_2D
+theme.notification_opacity = 0.9
 
 
 return theme

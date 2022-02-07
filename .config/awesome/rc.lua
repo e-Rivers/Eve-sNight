@@ -11,17 +11,22 @@ beautiful.init(current_theme)
 
 require("utils.layout")
 
--- Load Wallpaper
+-- Load Wallpapers per tag
 awful.screen.connect_for_each_screen(function(s)
-     gears.wallpaper.maximized(home .. "/.config/awesome/theme/wallpapers/eve'sNight-wallpaper.jpg")
+    s:connect_signal("tag::history::update", function()
+         gears.wallpaper.maximized(home .. "/.config/awesome/theme/wallpapers/wallpaper"..awful.tag.selected().name..".jpg", s, true)
+    end)
 end)
+-- TO LOAD ONLY ONE WALLPAPER ON ALL TAGS
+--awful.screen.connect_for_each_screen(function(s)
+--     gears.wallpaper.maximized(home .. "/.config/awesome/theme/wallpapers/eve'sNight-wallpaper.jpg")
+--end)
 
 -- components
 require('components.tag')
 require('components.dock')
---require('components.bar')
-require('components.menu')
-require('components.titlebar')
+require('components.volume_display')
+require('components.brightness_display')
 
 -- utils
 require('utils.autostart')
@@ -31,7 +36,13 @@ require('utils.keybind')
 require('utils.error_handling')
 
 -- Enable sloppy focus, so that focus follows mouse.
-client.connect_signal("mouse::enter", function(c)
-   c:activate { context = "mouse_enter", raise = false }
-end)
+--client.connect_signal("mouse::enter", function(c)
+--   c:activate { context = "mouse_enter", raise = false }
+--end)
 
+--require('awesome-wallpaper-changer').start({
+--	path = '/home/emiliorivers/.config/awesome/theme/wallpapers',
+--	show_notify = false,
+--	timeout = 5,
+--	change_on_click = true
+--})

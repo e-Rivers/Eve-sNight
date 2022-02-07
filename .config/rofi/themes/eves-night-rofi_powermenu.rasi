@@ -1,0 +1,102 @@
+/*  vim:fileencoding=utf-8:foldmethod=marker
+ *  
+ *  ROFI WINDOWCD MODI CONFIGURATION THEME
+ *  
+ *  Author: Emilio Rivers (e-Rivers)
+ */
+
+@import "../colors/colors.rasi"
+
+configuration {
+    font:                           "VictorMono Nerd Font 40";
+    show-icons:                     false;
+}
+
+window {
+    background-color:               @regular-green;
+    width:                          35%;
+    height:                         16.75%;
+    children:                       [mainbox];
+}
+
+mainbox {
+    margin:                         2% 1% 2% 1%;
+    background-color:               @background;
+    children:                       [listview];
+}
+
+listview {
+    layout:                         horizontal;
+    spacing:                        1%;
+    padding:                        1% 0% 1% 0.75%;
+    background-color:               inherit;
+    dynamic:                        true;
+}
+
+element {
+    orientation:                    horizontal;
+    padding:                        1% 0% 1% 0%;
+    background-color:               @background;
+    text-color:                     @foreground;
+}
+
+element-text {
+    background-color:               @transparent;
+    text-color:                     inherit;
+    margin:                         0.5% 2% 0% 1.5%;
+    expand:                         true;
+    vertical-align:                 0.5;
+    horizontal-align:               0.5;
+}
+
+element selected {
+	border:							0% 0% 0.3% 0%;
+    border-radius:                  0% 0% 0% 0%;
+    border-color:                  	@regular-green;
+}
+
+element normal.normal {
+    background-color:               @normal-background;
+    text-color:                     @normal-foreground;
+}
+
+element normal.urgent {
+    background-color:               @urgent-background;
+    text-color:                     @urgent-foreground;
+}
+
+element normal.active {
+    background-color:               @active-background;
+    text-color:                     @active-foreground;
+}
+
+element selected.normal {
+    background-color:               @selected-normal-background;
+    text-color:                     @selected-normal-foreground;
+}
+
+element selected.urgent {
+    background-color:               @selected-urgent-background;
+    text-color:                     @selected-urgent-foreground;
+}
+
+element selected.active {
+    background-color:               @selected-active-background;
+    text-color:                     @selected-active-foreground;
+}
+
+element alternate.normal {
+    background-color:               @alternate-normal-background;
+    text-color:                     @alternate-normal-foreground;
+}
+
+element alternate.urgent {
+    background-color:               @alternate-urgent-background;
+    text-color:                     @alternate-urgent-foreground;
+}
+
+element alternate.active {
+    background-color:               @alternate-active-background;
+    text-color:                     @alternate-active-foreground;
+}
+

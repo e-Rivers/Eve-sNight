@@ -92,3 +92,1091 @@
 06/01/22 (00:00:37) | INFO: Loglevel set to INFO
 06/01/22 (00:00:44) | INFO: Exiting. Runtime 0:00:08 
 
+06/01/22 (15:23:49) | INFO: New instance of bpytop version 1.0.68 started with pid 27182
+06/01/22 (15:23:49) | INFO: Loglevel set to INFO
+06/01/22 (15:23:58) | INFO: Exiting. Runtime 0:00:08 
+
+06/01/22 (21:10:49) | INFO: New instance of bpytop version 1.0.68 started with pid 36600
+06/01/22 (21:10:49) | INFO: Loglevel set to INFO
+06/01/22 (21:10:50) | ERROR: Data collection thread failed with exception: Sign not allowed in string format specifier
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2739, in _draw_fg
+    label = (f'{THEME.title}{Fx.b}{Mv.to(y, x)}{"Pid:":>7} {"Program:" if prog_len > 8 else "Prg:":<{prog_len}}' + (f'{"Arguments:":<{arg_len-4}}' if arg_len else "") +
+ValueError: Sign not allowed in string format specifier
+06/01/22 (21:10:50) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+06/01/22 (21:10:59) | INFO: New instance of bpytop version 1.0.68 started with pid 36614
+06/01/22 (21:10:59) | INFO: Loglevel set to INFO
+06/01/22 (21:11:18) | INFO: Exiting. Runtime 0:00:19 
+
+06/01/22 (23:40:03) | INFO: New instance of bpytop version 1.0.68 started with pid 40008
+06/01/22 (23:40:03) | INFO: Loglevel set to INFO
+06/01/22 (23:40:20) | INFO: Exiting. Runtime 0:00:17 
+
+06/01/22 (23:40:44) | INFO: New instance of bpytop version 1.0.68 started with pid 40026
+06/01/22 (23:40:44) | INFO: Loglevel set to INFO
+06/01/22 (23:41:03) | INFO: Exiting. Runtime 0:00:19 
+
+09/01/22 (14:14:43) | INFO: New instance of bpytop version 1.0.68 started with pid 13022
+09/01/22 (14:14:43) | INFO: Loglevel set to INFO
+09/01/22 (14:14:55) | INFO: Exiting. Runtime 0:00:13 
+
+14/01/22 (14:38:13) | INFO: New instance of bpytop version 1.0.68 started with pid 6658
+14/01/22 (14:38:13) | INFO: Loglevel set to INFO
+14/01/22 (14:38:18) | ERROR: <urlopen error timed out>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/urllib/request.py", line 1348, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/usr/lib/python3.10/http/client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.10/http/client.py", line 1037, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.10/http/client.py", line 975, in send
+    self.connect()
+  File "/usr/lib/python3.10/http/client.py", line 1447, in connect
+    super().connect()
+  File "/usr/lib/python3.10/http/client.py", line 941, in connect
+    self.sock = self._create_connection(
+  File "/usr/lib/python3.10/socket.py", line 845, in create_connection
+    raise err
+  File "/usr/lib/python3.10/socket.py", line 833, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 5029, in _checker
+    with urllib.request.urlopen("https://github.com/aristocratos/bpytop/raw/master/bpytop.py", timeout=5) as source: # type: ignore
+  File "/usr/lib/python3.10/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.10/urllib/request.py", line 519, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.10/urllib/request.py", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/usr/lib/python3.10/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.10/urllib/request.py", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+  File "/usr/lib/python3.10/urllib/request.py", line 1351, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error timed out>
+14/01/22 (14:40:38) | INFO: Exiting. Runtime 0:02:25 
+
+14/01/22 (14:40:40) | INFO: New instance of bpytop version 1.0.68 started with pid 6786
+14/01/22 (14:40:40) | INFO: Loglevel set to INFO
+14/01/22 (14:40:42) | INFO: Exiting. Runtime 0:00:01 
+
+17/01/22 (11:51:00) | INFO: New instance of bpytop version 1.0.68 started with pid 52150
+17/01/22 (11:51:00) | INFO: Loglevel set to INFO
+17/01/22 (12:04:14) | INFO: Exiting. Runtime 0:13:15 
+
+17/01/22 (14:53:40) | INFO: New instance of bpytop version 1.0.68 started with pid 129298
+17/01/22 (14:53:40) | INFO: Loglevel set to INFO
+17/01/22 (14:53:41) | INFO: Exiting. Runtime 0:00:01 
+
+17/01/22 (22:45:00) | INFO: New instance of bpytop version 1.0.68 started with pid 219761
+17/01/22 (22:45:00) | INFO: Loglevel set to INFO
+17/01/22 (22:45:00) | INFO: New instance of bpytop version 1.0.68 started with pid 219765
+17/01/22 (22:45:00) | INFO: Loglevel set to INFO
+17/01/22 (22:45:02) | INFO: New instance of bpytop version 1.0.68 started with pid 219785
+17/01/22 (22:45:02) | INFO: Loglevel set to INFO
+17/01/22 (22:45:02) | INFO: New instance of bpytop version 1.0.68 started with pid 219790
+17/01/22 (22:45:02) | INFO: Loglevel set to INFO
+17/01/22 (22:45:02) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:02) | WARNING: Exiting with errorcode (1). Runtime 0:00:03 
+
+17/01/22 (22:45:03) | INFO: New instance of bpytop version 1.0.68 started with pid 219805
+17/01/22 (22:45:03) | INFO: Loglevel set to INFO
+17/01/22 (22:45:03) | INFO: New instance of bpytop version 1.0.68 started with pid 219803
+17/01/22 (22:45:03) | INFO: Loglevel set to INFO
+17/01/22 (22:45:03) | INFO: New instance of bpytop version 1.0.68 started with pid 219804
+17/01/22 (22:45:03) | INFO: Loglevel set to INFO
+17/01/22 (22:45:03) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:03) | WARNING: Exiting with errorcode (1). Runtime 0:00:03 
+
+17/01/22 (22:45:06) | INFO: New instance of bpytop version 1.0.68 started with pid 219845
+17/01/22 (22:45:06) | INFO: Loglevel set to INFO
+17/01/22 (22:45:06) | INFO: New instance of bpytop version 1.0.68 started with pid 219848
+17/01/22 (22:45:06) | INFO: Loglevel set to INFO
+17/01/22 (22:45:06) | INFO: New instance of bpytop version 1.0.68 started with pid 219857
+17/01/22 (22:45:06) | INFO: Loglevel set to INFO
+17/01/22 (22:45:06) | INFO: New instance of bpytop version 1.0.68 started with pid 219863
+17/01/22 (22:45:06) | INFO: Loglevel set to INFO
+17/01/22 (22:45:07) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:07) | WARNING: Exiting with errorcode (1). Runtime 0:00:05 
+
+17/01/22 (22:45:07) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:07) | WARNING: Exiting with errorcode (1). Runtime 0:00:05 
+
+17/01/22 (22:45:07) | INFO: New instance of bpytop version 1.0.68 started with pid 219880
+17/01/22 (22:45:07) | INFO: Loglevel set to INFO
+17/01/22 (22:45:07) | INFO: New instance of bpytop version 1.0.68 started with pid 219887
+17/01/22 (22:45:07) | INFO: Loglevel set to INFO
+17/01/22 (22:45:07) | INFO: New instance of bpytop version 1.0.68 started with pid 219881
+17/01/22 (22:45:07) | INFO: Loglevel set to INFO
+17/01/22 (22:45:07) | INFO: New instance of bpytop version 1.0.68 started with pid 219891
+17/01/22 (22:45:07) | INFO: Loglevel set to INFO
+17/01/22 (22:45:08) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:08) | WARNING: Exiting with errorcode (1). Runtime 0:00:05 
+
+17/01/22 (22:45:08) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:08) | INFO: New instance of bpytop version 1.0.68 started with pid 219913
+17/01/22 (22:45:08) | INFO: Loglevel set to INFO
+17/01/22 (22:45:08) | WARNING: Exiting with errorcode (1). Runtime 0:00:06 
+
+17/01/22 (22:45:08) | INFO: New instance of bpytop version 1.0.68 started with pid 219916
+17/01/22 (22:45:08) | INFO: Loglevel set to INFO
+17/01/22 (22:45:08) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:08) | INFO: New instance of bpytop version 1.0.68 started with pid 219907
+17/01/22 (22:45:08) | INFO: Loglevel set to INFO
+17/01/22 (22:45:08) | WARNING: Exiting with errorcode (1). Runtime 0:00:05 
+
+17/01/22 (22:45:09) | INFO: New instance of bpytop version 1.0.68 started with pid 219937
+17/01/22 (22:45:09) | INFO: Loglevel set to INFO
+17/01/22 (22:45:09) | INFO: New instance of bpytop version 1.0.68 started with pid 219941
+17/01/22 (22:45:09) | INFO: Loglevel set to INFO
+17/01/22 (22:45:10) | INFO: New instance of bpytop version 1.0.68 started with pid 219943
+17/01/22 (22:45:10) | INFO: Loglevel set to INFO
+17/01/22 (22:45:10) | INFO: New instance of bpytop version 1.0.68 started with pid 219952
+17/01/22 (22:45:10) | INFO: Loglevel set to INFO
+17/01/22 (22:45:10) | INFO: New instance of bpytop version 1.0.68 started with pid 219958
+17/01/22 (22:45:10) | INFO: Loglevel set to INFO
+17/01/22 (22:45:10) | INFO: New instance of bpytop version 1.0.68 started with pid 219957
+17/01/22 (22:45:10) | INFO: Loglevel set to INFO
+17/01/22 (22:45:11) | INFO: New instance of bpytop version 1.0.68 started with pid 219975
+17/01/22 (22:45:11) | INFO: Loglevel set to INFO
+17/01/22 (22:45:11) | INFO: New instance of bpytop version 1.0.68 started with pid 219977
+17/01/22 (22:45:11) | INFO: Loglevel set to INFO
+17/01/22 (22:45:12) | INFO: New instance of bpytop version 1.0.68 started with pid 219982
+17/01/22 (22:45:12) | INFO: Loglevel set to INFO
+17/01/22 (22:45:13) | INFO: New instance of bpytop version 1.0.68 started with pid 220001
+17/01/22 (22:45:13) | INFO: Loglevel set to INFO
+17/01/22 (22:45:13) | INFO: New instance of bpytop version 1.0.68 started with pid 219995
+17/01/22 (22:45:13) | INFO: Loglevel set to INFO
+17/01/22 (22:45:13) | INFO: New instance of bpytop version 1.0.68 started with pid 220002
+17/01/22 (22:45:13) | INFO: Loglevel set to INFO
+17/01/22 (22:45:14) | INFO: New instance of bpytop version 1.0.68 started with pid 220014
+17/01/22 (22:45:14) | INFO: Loglevel set to INFO
+17/01/22 (22:45:15) | INFO: New instance of bpytop version 1.0.68 started with pid 220060
+17/01/22 (22:45:15) | INFO: Loglevel set to INFO
+17/01/22 (22:45:15) | INFO: New instance of bpytop version 1.0.68 started with pid 220068
+17/01/22 (22:45:15) | INFO: Loglevel set to INFO
+17/01/22 (22:45:15) | INFO: New instance of bpytop version 1.0.68 started with pid 220064
+17/01/22 (22:45:15) | INFO: Loglevel set to INFO
+17/01/22 (22:45:15) | INFO: New instance of bpytop version 1.0.68 started with pid 220049
+17/01/22 (22:45:15) | INFO: Loglevel set to INFO
+17/01/22 (22:45:16) | INFO: New instance of bpytop version 1.0.68 started with pid 220070
+17/01/22 (22:45:16) | INFO: Loglevel set to INFO
+17/01/22 (22:45:17) | INFO: New instance of bpytop version 1.0.68 started with pid 220110
+17/01/22 (22:45:17) | INFO: Loglevel set to INFO
+17/01/22 (22:45:17) | INFO: New instance of bpytop version 1.0.68 started with pid 220121
+17/01/22 (22:45:17) | INFO: Loglevel set to INFO
+17/01/22 (22:45:17) | INFO: New instance of bpytop version 1.0.68 started with pid 220107
+17/01/22 (22:45:17) | INFO: Loglevel set to INFO
+17/01/22 (22:45:17) | INFO: New instance of bpytop version 1.0.68 started with pid 220109
+17/01/22 (22:45:17) | INFO: Loglevel set to INFO
+17/01/22 (22:45:17) | INFO: New instance of bpytop version 1.0.68 started with pid 220112
+17/01/22 (22:45:17) | INFO: Loglevel set to INFO
+17/01/22 (22:45:17) | INFO: New instance of bpytop version 1.0.68 started with pid 220120
+17/01/22 (22:45:17) | INFO: Loglevel set to INFO
+17/01/22 (22:45:17) | INFO: New instance of bpytop version 1.0.68 started with pid 220117
+17/01/22 (22:45:17) | INFO: Loglevel set to INFO
+17/01/22 (22:45:17) | INFO: New instance of bpytop version 1.0.68 started with pid 220127
+17/01/22 (22:45:17) | INFO: Loglevel set to INFO
+17/01/22 (22:45:17) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:17) | WARNING: Exiting with errorcode (1). Runtime 0:00:08 
+
+17/01/22 (22:45:18) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:18) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:18) | WARNING: Exiting with errorcode (1). Runtime 0:00:08 
+
+17/01/22 (22:45:18) | WARNING: Exiting with errorcode (1). Runtime 0:00:08 
+
+17/01/22 (22:45:18) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:19) | WARNING: Exiting with errorcode (1). Runtime 0:00:07 
+
+17/01/22 (22:45:19) | INFO: New instance of bpytop version 1.0.68 started with pid 220161
+17/01/22 (22:45:19) | INFO: Loglevel set to INFO
+17/01/22 (22:45:19) | INFO: New instance of bpytop version 1.0.68 started with pid 220167
+17/01/22 (22:45:19) | INFO: Loglevel set to INFO
+17/01/22 (22:45:19) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:19) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:19) | INFO: New instance of bpytop version 1.0.68 started with pid 220168
+17/01/22 (22:45:19) | INFO: Loglevel set to INFO
+17/01/22 (22:45:19) | WARNING: Exiting with errorcode (1). Runtime 0:00:07 
+
+17/01/22 (22:45:19) | WARNING: Exiting with errorcode (1). Runtime 0:00:08 
+
+17/01/22 (22:45:19) | INFO: New instance of bpytop version 1.0.68 started with pid 220169
+17/01/22 (22:45:19) | INFO: Loglevel set to INFO
+17/01/22 (22:45:20) | INFO: New instance of bpytop version 1.0.68 started with pid 220166
+17/01/22 (22:45:20) | INFO: Loglevel set to INFO
+17/01/22 (22:45:20) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:20) | WARNING: Exiting with errorcode (1). Runtime 0:00:07 
+
+17/01/22 (22:45:20) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:20) | WARNING: Exiting with errorcode (1). Runtime 0:00:08 
+
+17/01/22 (22:45:20) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:20) | WARNING: Exiting with errorcode (1). Runtime 0:00:07 
+
+17/01/22 (22:45:20) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:20) | WARNING: Exiting with errorcode (1). Runtime 0:00:07 
+
+17/01/22 (22:45:21) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:22) | WARNING: Exiting with errorcode (1). Runtime 0:00:07 
+
+17/01/22 (22:45:22) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:22) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:22) | WARNING: Exiting with errorcode (1). Runtime 0:00:07 
+
+17/01/22 (22:45:22) | WARNING: Exiting with errorcode (1). Runtime 0:00:07 
+
+17/01/22 (22:45:22) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:22) | WARNING: Exiting with errorcode (1). Runtime 0:00:07 
+
+17/01/22 (22:45:22) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:22) | WARNING: Exiting with errorcode (1). Runtime 0:00:07 
+
+17/01/22 (22:45:23) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:23) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:23) | WARNING: Exiting with errorcode (1). Runtime 0:00:06 
+
+17/01/22 (22:45:23) | WARNING: Exiting with errorcode (1). Runtime 0:00:06 
+
+17/01/22 (22:45:23) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:23) | WARNING: Exiting with errorcode (1). Runtime 0:00:06 
+
+17/01/22 (22:45:23) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:23) | WARNING: Exiting with errorcode (1). Runtime 0:00:06 
+
+17/01/22 (22:45:23) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:23) | WARNING: Exiting with errorcode (1). Runtime 0:00:06 
+
+17/01/22 (22:45:23) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:23) | WARNING: Exiting with errorcode (1). Runtime 0:00:06 
+
+17/01/22 (22:45:23) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:23) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:24) | WARNING: Exiting with errorcode (1). Runtime 0:00:06 
+
+17/01/22 (22:45:24) | WARNING: Exiting with errorcode (1). Runtime 0:00:06 
+
+17/01/22 (22:45:24) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:24) | WARNING: Exiting with errorcode (1). Runtime 0:00:06 
+
+17/01/22 (22:45:24) | ERROR: Data collection thread failed with exception: Format specifier missing precision
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2806, in _draw_fg
+    indent = f'{indent:.{tree_len - len(str(pid))}}'
+ValueError: Format specifier missing precision
+17/01/22 (22:45:24) | WARNING: Exiting with errorcode (1). Runtime 0:00:06 
+
+17/01/22 (22:45:24) | ERROR: Input thread failed with exception: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 957, in _get_key
+    input_key += sys.stdin.read(1)						#* Read 1 key safely with blocking on
+OSError: [Errno 5] Input/output error
+17/01/22 (22:45:24) | ERROR: Input thread failed with exception: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 957, in _get_key
+    input_key += sys.stdin.read(1)						#* Read 1 key safely with blocking on
+OSError: [Errno 5] Input/output error
+17/01/22 (22:45:24) | ERROR: Input thread failed with exception: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 957, in _get_key
+    input_key += sys.stdin.read(1)						#* Read 1 key safely with blocking on
+OSError: [Errno 5] Input/output error
+17/01/22 (22:45:24) | ERROR: Input thread failed with exception: [Errno 5] Input/output error
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 957, in _get_key
+    input_key += sys.stdin.read(1)						#* Read 1 key safely with blocking on
+OSError: [Errno 5] Input/output error
+17/01/22 (22:45:35) | INFO: New instance of bpytop version 1.0.68 started with pid 220742
+17/01/22 (22:45:35) | INFO: Loglevel set to INFO
+17/01/22 (22:45:35) | INFO: New instance of bpytop version 1.0.68 started with pid 220750
+17/01/22 (22:45:35) | INFO: Loglevel set to INFO
+17/01/22 (22:46:12) | INFO: New instance of bpytop version 1.0.68 started with pid 220798
+17/01/22 (22:46:12) | INFO: Loglevel set to INFO
+17/01/22 (22:46:13) | INFO: New instance of bpytop version 1.0.68 started with pid 220806
+17/01/22 (22:46:13) | INFO: Loglevel set to INFO
+17/01/22 (22:46:14) | INFO: New instance of bpytop version 1.0.68 started with pid 220818
+17/01/22 (22:46:14) | INFO: Loglevel set to INFO
+18/01/22 (13:06:36) | INFO: New instance of bpytop version 1.0.68 started with pid 12255
+18/01/22 (13:06:36) | INFO: Loglevel set to INFO
+18/01/22 (13:07:04) | INFO: Exiting. Runtime 0:00:29 
+
+18/01/22 (13:07:10) | INFO: New instance of bpytop version 1.0.68 started with pid 12266
+18/01/22 (13:07:10) | INFO: Loglevel set to INFO
+18/01/22 (13:07:13) | INFO: Exiting. Runtime 0:00:03 
+
+18/01/22 (13:07:29) | INFO: New instance of bpytop version 1.0.68 started with pid 12288
+18/01/22 (13:07:29) | INFO: Loglevel set to INFO
+18/01/22 (13:07:31) | INFO: Exiting. Runtime 0:00:02 
+
+18/01/22 (21:47:19) | INFO: New instance of bpytop version 1.0.68 started with pid 30662
+18/01/22 (21:47:19) | INFO: Loglevel set to INFO
+18/01/22 (21:47:20) | INFO: Exiting. Runtime 0:00:01 
+
+18/01/22 (22:44:55) | INFO: New instance of bpytop version 1.0.68 started with pid 33592
+18/01/22 (22:44:55) | INFO: Loglevel set to INFO
+18/01/22 (22:45:01) | INFO: Exiting. Runtime 0:00:06 
+
+18/01/22 (22:45:16) | INFO: New instance of bpytop version 1.0.68 started with pid 33800
+18/01/22 (22:45:16) | INFO: Loglevel set to INFO
+18/01/22 (22:45:49) | INFO: Exiting. Runtime 0:00:33 
+
+21/01/22 (00:25:33) | INFO: New instance of bpytop version 1.0.68 started with pid 97531
+21/01/22 (00:25:34) | INFO: Loglevel set to INFO
+21/01/22 (00:25:41) | INFO: Exiting. Runtime 0:00:07 
+
+21/01/22 (00:25:45) | INFO: New instance of bpytop version 1.0.68 started with pid 97542
+21/01/22 (00:25:45) | INFO: Loglevel set to INFO
+21/01/22 (00:25:46) | INFO: Exiting. Runtime 0:00:01 
+
+21/01/22 (00:37:14) | INFO: New instance of bpytop version 1.0.68 started with pid 103780
+21/01/22 (00:37:14) | INFO: Loglevel set to INFO
+21/01/22 (00:37:25) | INFO: Exiting. Runtime 0:00:11 
+
+21/01/22 (12:14:35) | INFO: New instance of bpytop version 1.0.68 started with pid 7606
+21/01/22 (12:14:36) | INFO: Loglevel set to INFO
+21/01/22 (12:15:04) | INFO: Exiting. Runtime 0:00:29 
+
+21/01/22 (12:15:08) | INFO: New instance of bpytop version 1.0.68 started with pid 7787
+21/01/22 (12:15:08) | INFO: Loglevel set to INFO
+21/01/22 (12:15:12) | INFO: Exiting. Runtime 0:00:03 
+
+21/01/22 (12:15:27) | INFO: New instance of bpytop version 1.0.68 started with pid 7970
+21/01/22 (12:15:27) | INFO: Loglevel set to INFO
+21/01/22 (12:15:28) | INFO: Exiting. Runtime 0:00:01 
+
+21/01/22 (12:16:40) | INFO: New instance of bpytop version 1.0.68 started with pid 8199
+21/01/22 (12:16:40) | INFO: Loglevel set to INFO
+21/01/22 (12:16:41) | INFO: Exiting. Runtime 0:00:01 
+
+21/01/22 (12:18:12) | INFO: New instance of bpytop version 1.0.68 started with pid 8229
+21/01/22 (12:18:12) | INFO: Loglevel set to INFO
+21/01/22 (12:18:12) | INFO: Exiting. Runtime 0:00:01 
+
+21/01/22 (12:18:22) | INFO: New instance of bpytop version 1.0.68 started with pid 8389
+21/01/22 (12:18:22) | INFO: Loglevel set to INFO
+21/01/22 (12:18:24) | INFO: Exiting. Runtime 0:00:02 
+
+21/01/22 (12:37:29) | INFO: New instance of bpytop version 1.0.68 started with pid 9838
+21/01/22 (12:37:29) | INFO: Loglevel set to INFO
+21/01/22 (12:38:18) | INFO: Exiting. Runtime 0:00:48 
+
+21/01/22 (13:06:03) | INFO: New instance of bpytop version 1.0.68 started with pid 12256
+21/01/22 (13:06:03) | INFO: Loglevel set to INFO
+21/01/22 (13:06:05) | INFO: Exiting. Runtime 0:00:02 
+
+21/01/22 (13:07:59) | INFO: New instance of bpytop version 1.0.68 started with pid 12380
+21/01/22 (13:07:59) | INFO: Loglevel set to INFO
+21/01/22 (13:08:04) | INFO: Exiting. Runtime 0:00:05 
+
+21/01/22 (13:26:19) | INFO: New instance of bpytop version 1.0.68 started with pid 16373
+21/01/22 (13:26:19) | INFO: Loglevel set to INFO
+21/01/22 (13:26:20) | INFO: Exiting. Runtime 0:00:01 
+
+21/01/22 (15:16:56) | INFO: New instance of bpytop version 1.0.68 started with pid 26069
+21/01/22 (15:16:56) | INFO: Loglevel set to INFO
+21/01/22 (15:16:59) | INFO: Exiting. Runtime 0:00:03 
+
+24/01/22 (00:01:48) | INFO: New instance of bpytop version 1.0.68 started with pid 40069
+24/01/22 (00:01:48) | INFO: Loglevel set to INFO
+24/01/22 (00:01:48) | ERROR: Data collection thread failed with exception: integer division or modulo by zero
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2834, in _draw_fg
+    val = ((v if v <= 100 else 100) + 100) - calc * 100 // cls.select_max
+ZeroDivisionError: integer division or modulo by zero
+24/01/22 (00:01:48) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (00:01:50) | INFO: New instance of bpytop version 1.0.68 started with pid 40080
+24/01/22 (00:01:50) | INFO: Loglevel set to INFO
+24/01/22 (00:01:51) | ERROR: Data collection thread failed with exception: integer division or modulo by zero
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2834, in _draw_fg
+    val = ((v if v <= 100 else 100) + 100) - calc * 100 // cls.select_max
+ZeroDivisionError: integer division or modulo by zero
+24/01/22 (00:01:51) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (00:01:52) | INFO: New instance of bpytop version 1.0.68 started with pid 40090
+24/01/22 (00:01:52) | INFO: Loglevel set to INFO
+24/01/22 (00:01:52) | ERROR: Data collection thread failed with exception: integer division or modulo by zero
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2834, in _draw_fg
+    val = ((v if v <= 100 else 100) + 100) - calc * 100 // cls.select_max
+ZeroDivisionError: integer division or modulo by zero
+24/01/22 (00:01:52) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (00:01:54) | INFO: New instance of bpytop version 1.0.68 started with pid 40100
+24/01/22 (00:01:54) | INFO: Loglevel set to INFO
+24/01/22 (00:01:54) | ERROR: Data collection thread failed with exception: integer division or modulo by zero
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2834, in _draw_fg
+    val = ((v if v <= 100 else 100) + 100) - calc * 100 // cls.select_max
+ZeroDivisionError: integer division or modulo by zero
+24/01/22 (00:01:54) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (00:01:56) | INFO: New instance of bpytop version 1.0.68 started with pid 40110
+24/01/22 (00:01:56) | INFO: Loglevel set to INFO
+24/01/22 (00:01:56) | ERROR: Data collection thread failed with exception: integer division or modulo by zero
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2834, in _draw_fg
+    val = ((v if v <= 100 else 100) + 100) - calc * 100 // cls.select_max
+ZeroDivisionError: integer division or modulo by zero
+24/01/22 (00:01:56) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (00:01:57) | INFO: New instance of bpytop version 1.0.68 started with pid 40120
+24/01/22 (00:01:57) | INFO: Loglevel set to INFO
+24/01/22 (00:01:57) | ERROR: Data collection thread failed with exception: integer division or modulo by zero
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2834, in _draw_fg
+    val = ((v if v <= 100 else 100) + 100) - calc * 100 // cls.select_max
+ZeroDivisionError: integer division or modulo by zero
+24/01/22 (00:01:57) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (00:02:01) | INFO: New instance of bpytop version 1.0.68 started with pid 40175
+24/01/22 (00:02:01) | INFO: Loglevel set to INFO
+24/01/22 (00:02:01) | ERROR: Data collection thread failed with exception: integer division or modulo by zero
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2834, in _draw_fg
+    val = ((v if v <= 100 else 100) + 100) - calc * 100 // cls.select_max
+ZeroDivisionError: integer division or modulo by zero
+24/01/22 (00:02:01) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (00:05:28) | INFO: New instance of bpytop version 1.0.68 started with pid 40497
+24/01/22 (00:05:28) | INFO: Loglevel set to INFO
+24/01/22 (00:05:38) | INFO: Exiting. Runtime 0:00:09 
+
+24/01/22 (00:05:39) | INFO: New instance of bpytop version 1.0.68 started with pid 40511
+24/01/22 (00:05:39) | INFO: Loglevel set to INFO
+24/01/22 (00:05:42) | INFO: Exiting. Runtime 0:00:03 
+
+24/01/22 (00:05:47) | INFO: New instance of bpytop version 1.0.68 started with pid 40539
+24/01/22 (00:05:47) | INFO: Loglevel set to INFO
+24/01/22 (00:05:53) | INFO: Exiting. Runtime 0:00:06 
+
+24/01/22 (09:17:07) | INFO: New instance of bpytop version 1.0.68 started with pid 3710
+24/01/22 (09:17:07) | INFO: Loglevel set to INFO
+24/01/22 (09:17:07) | ERROR: Data collection thread failed with exception: integer division or modulo by zero
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2834, in _draw_fg
+    val = ((v if v <= 100 else 100) + 100) - calc * 100 // cls.select_max
+ZeroDivisionError: integer division or modulo by zero
+24/01/22 (09:17:07) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (09:17:13) | INFO: New instance of bpytop version 1.0.68 started with pid 3727
+24/01/22 (09:17:13) | INFO: Loglevel set to INFO
+24/01/22 (09:17:13) | ERROR: Data collection thread failed with exception: integer division or modulo by zero
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2834, in _draw_fg
+    val = ((v if v <= 100 else 100) + 100) - calc * 100 // cls.select_max
+ZeroDivisionError: integer division or modulo by zero
+24/01/22 (09:17:13) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (09:17:27) | INFO: New instance of bpytop version 1.0.68 started with pid 3765
+24/01/22 (09:17:27) | INFO: Loglevel set to INFO
+24/01/22 (09:17:27) | ERROR: Data collection thread failed with exception: integer division or modulo by zero
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2834, in _draw_fg
+    val = ((v if v <= 100 else 100) + 100) - calc * 100 // cls.select_max
+ZeroDivisionError: integer division or modulo by zero
+24/01/22 (09:17:27) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (09:17:30) | INFO: New instance of bpytop version 1.0.68 started with pid 3777
+24/01/22 (09:17:30) | INFO: Loglevel set to INFO
+24/01/22 (09:17:30) | ERROR: Data collection thread failed with exception: integer division or modulo by zero
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2834, in _draw_fg
+    val = ((v if v <= 100 else 100) + 100) - calc * 100 // cls.select_max
+ZeroDivisionError: integer division or modulo by zero
+24/01/22 (09:17:30) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (09:17:33) | INFO: New instance of bpytop version 1.0.68 started with pid 3792
+24/01/22 (09:17:33) | INFO: Loglevel set to INFO
+24/01/22 (09:17:33) | ERROR: Data collection thread failed with exception: integer division or modulo by zero
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2834, in _draw_fg
+    val = ((v if v <= 100 else 100) + 100) - calc * 100 // cls.select_max
+ZeroDivisionError: integer division or modulo by zero
+24/01/22 (09:17:33) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (09:17:40) | INFO: New instance of bpytop version 1.0.68 started with pid 3832
+24/01/22 (09:17:40) | INFO: Loglevel set to INFO
+24/01/22 (09:17:40) | ERROR: Data collection thread failed with exception: integer division or modulo by zero
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2834, in _draw_fg
+    val = ((v if v <= 100 else 100) + 100) - calc * 100 // cls.select_max
+ZeroDivisionError: integer division or modulo by zero
+24/01/22 (09:17:40) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (09:17:44) | INFO: New instance of bpytop version 1.0.68 started with pid 3984
+24/01/22 (09:17:44) | INFO: Loglevel set to INFO
+24/01/22 (09:17:44) | ERROR: Data collection thread failed with exception: integer division or modulo by zero
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2834, in _draw_fg
+    val = ((v if v <= 100 else 100) + 100) - calc * 100 // cls.select_max
+ZeroDivisionError: integer division or modulo by zero
+24/01/22 (09:17:44) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (09:18:07) | INFO: New instance of bpytop version 1.0.68 started with pid 4074
+24/01/22 (09:18:07) | INFO: Loglevel set to INFO
+24/01/22 (09:18:07) | ERROR: Data collection thread failed with exception: integer division or modulo by zero
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2834, in _draw_fg
+    val = ((v if v <= 100 else 100) + 100) - calc * 100 // cls.select_max
+ZeroDivisionError: integer division or modulo by zero
+24/01/22 (09:18:07) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (09:28:57) | INFO: New instance of bpytop version 1.0.68 started with pid 4593
+24/01/22 (09:28:57) | INFO: Loglevel set to INFO
+24/01/22 (09:29:00) | INFO: Exiting. Runtime 0:00:03 
+
+24/01/22 (09:29:02) | INFO: New instance of bpytop version 1.0.68 started with pid 4603
+24/01/22 (09:29:02) | INFO: Loglevel set to INFO
+24/01/22 (09:29:10) | INFO: Exiting. Runtime 0:00:08 
+
+24/01/22 (09:43:09) | INFO: New instance of bpytop version 1.0.68 started with pid 5951
+24/01/22 (09:43:09) | INFO: Loglevel set to INFO
+24/01/22 (09:43:09) | ERROR: Data collection thread failed with exception: integer division or modulo by zero
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2834, in _draw_fg
+    val = ((v if v <= 100 else 100) + 100) - calc * 100 // cls.select_max
+ZeroDivisionError: integer division or modulo by zero
+24/01/22 (09:43:09) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (09:43:14) | INFO: New instance of bpytop version 1.0.68 started with pid 6001
+24/01/22 (09:43:14) | INFO: Loglevel set to INFO
+24/01/22 (09:43:14) | ERROR: Data collection thread failed with exception: integer division or modulo by zero
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2834, in _draw_fg
+    val = ((v if v <= 100 else 100) + 100) - calc * 100 // cls.select_max
+ZeroDivisionError: integer division or modulo by zero
+24/01/22 (09:43:15) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (09:43:41) | INFO: New instance of bpytop version 1.0.68 started with pid 6029
+24/01/22 (09:43:41) | INFO: Loglevel set to INFO
+24/01/22 (09:43:42) | ERROR: Data collection thread failed with exception: integer division or modulo by zero
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2834, in _draw_fg
+    val = ((v if v <= 100 else 100) + 100) - calc * 100 // cls.select_max
+ZeroDivisionError: integer division or modulo by zero
+24/01/22 (09:43:42) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (09:43:50) | INFO: New instance of bpytop version 1.0.68 started with pid 6083
+24/01/22 (09:43:50) | INFO: Loglevel set to INFO
+24/01/22 (09:43:51) | INFO: Exiting. Runtime 0:00:01 
+
+24/01/22 (09:44:03) | INFO: New instance of bpytop version 1.0.68 started with pid 6106
+24/01/22 (09:44:03) | INFO: Loglevel set to INFO
+24/01/22 (09:44:03) | ERROR: Data collection thread failed with exception: integer division or modulo by zero
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2834, in _draw_fg
+    val = ((v if v <= 100 else 100) + 100) - calc * 100 // cls.select_max
+ZeroDivisionError: integer division or modulo by zero
+24/01/22 (09:44:03) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (09:44:06) | INFO: New instance of bpytop version 1.0.68 started with pid 6118
+24/01/22 (09:44:06) | INFO: Loglevel set to INFO
+24/01/22 (09:44:09) | INFO: Exiting. Runtime 0:00:03 
+
+24/01/22 (09:44:11) | INFO: New instance of bpytop version 1.0.68 started with pid 6130
+24/01/22 (09:44:11) | INFO: Loglevel set to INFO
+24/01/22 (09:44:23) | INFO: New instance of bpytop version 1.0.68 started with pid 6148
+24/01/22 (09:44:23) | INFO: Loglevel set to INFO
+24/01/22 (09:44:23) | ERROR: Data collection thread failed with exception: integer division or modulo by zero
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2834, in _draw_fg
+    val = ((v if v <= 100 else 100) + 100) - calc * 100 // cls.select_max
+ZeroDivisionError: integer division or modulo by zero
+24/01/22 (09:44:23) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (09:46:08) | INFO: New instance of bpytop version 1.0.68 started with pid 6282
+24/01/22 (09:46:08) | INFO: Loglevel set to INFO
+24/01/22 (09:46:18) | INFO: Exiting. Runtime 0:00:10 
+
+24/01/22 (09:46:45) | INFO: New instance of bpytop version 1.0.68 started with pid 6468
+24/01/22 (09:46:45) | INFO: Loglevel set to INFO
+24/01/22 (09:47:00) | INFO: Exiting. Runtime 0:00:15 
+
+24/01/22 (09:47:07) | INFO: New instance of bpytop version 1.0.68 started with pid 6494
+24/01/22 (09:47:07) | INFO: Loglevel set to INFO
+24/01/22 (09:47:08) | INFO: Exiting. Runtime 0:00:01 
+
+24/01/22 (09:47:11) | INFO: New instance of bpytop version 1.0.68 started with pid 6504
+24/01/22 (09:47:11) | INFO: Loglevel set to INFO
+24/01/22 (09:47:13) | INFO: Exiting. Runtime 0:00:01 
+
+24/01/22 (09:47:41) | INFO: New instance of bpytop version 1.0.68 started with pid 6673
+24/01/22 (09:47:41) | INFO: Loglevel set to INFO
+24/01/22 (09:47:48) | INFO: Exiting. Runtime 0:00:08 
+
+24/01/22 (09:48:04) | INFO: New instance of bpytop version 1.0.68 started with pid 6833
+24/01/22 (09:48:04) | INFO: Loglevel set to INFO
+24/01/22 (09:48:05) | ERROR: Data collection thread failed with exception: Sign not allowed in string format specifier
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2735, in _draw_fg
+    label = (f'{THEME.title}{Fx.b}{Mv.to(y, x)}{" Tree:":<{tree_len-2}}' + (f'{"Threads: ":<9}' if tr_show else " "*4) + (f'{"User:":<9}' if usr_show else "") + f'Mem%{"Cpu%":>11}{Fx.ub}{THEME.main_fg} ' +
+ValueError: Sign not allowed in string format specifier
+24/01/22 (09:48:05) | WARNING: Exiting with errorcode (1). Runtime 0:00:00 
+
+24/01/22 (09:48:15) | INFO: New instance of bpytop version 1.0.68 started with pid 6991
+24/01/22 (09:48:15) | INFO: Loglevel set to INFO
+24/01/22 (09:48:17) | INFO: Exiting. Runtime 0:00:02 
+
+24/01/22 (09:48:24) | INFO: New instance of bpytop version 1.0.68 started with pid 7145
+24/01/22 (09:48:24) | INFO: Loglevel set to INFO
+24/01/22 (09:48:28) | INFO: Exiting. Runtime 0:00:04 
+
+24/01/22 (09:48:29) | INFO: New instance of bpytop version 1.0.68 started with pid 7157
+24/01/22 (09:48:29) | INFO: Loglevel set to INFO
+24/01/22 (09:48:32) | INFO: Exiting. Runtime 0:00:03 
+
+24/01/22 (09:48:41) | INFO: New instance of bpytop version 1.0.68 started with pid 7318
+24/01/22 (09:48:41) | INFO: Loglevel set to INFO
+24/01/22 (09:48:42) | INFO: Exiting. Runtime 0:00:01 
+
+24/01/22 (09:48:50) | INFO: New instance of bpytop version 1.0.68 started with pid 7473
+24/01/22 (09:48:50) | INFO: Loglevel set to INFO
+24/01/22 (09:48:58) | INFO: Exiting. Runtime 0:00:08 
+
+24/01/22 (09:48:59) | INFO: New instance of bpytop version 1.0.68 started with pid 7483
+24/01/22 (09:48:59) | INFO: Loglevel set to INFO
+24/01/22 (09:49:02) | INFO: Exiting. Runtime 0:00:04 
+
+24/01/22 (12:05:16) | INFO: New instance of bpytop version 1.0.68 started with pid 8527
+24/01/22 (12:05:16) | INFO: Loglevel set to INFO
+24/01/22 (12:05:17) | INFO: Exiting. Runtime 0:00:01 
+
+24/01/22 (12:11:23) | INFO: New instance of bpytop version 1.0.68 started with pid 12583
+24/01/22 (12:11:23) | INFO: Loglevel set to INFO
+24/01/22 (12:11:25) | INFO: Exiting. Runtime 0:00:02 
+
+25/01/22 (10:12:31) | INFO: New instance of bpytop version 1.0.68 started with pid 5369
+25/01/22 (10:12:31) | INFO: Loglevel set to INFO
+25/01/22 (10:12:41) | INFO: Exiting. Runtime 0:00:09 
+
+25/01/22 (10:12:46) | INFO: New instance of bpytop version 1.0.68 started with pid 5393
+25/01/22 (10:12:46) | INFO: Loglevel set to INFO
+25/01/22 (10:12:49) | INFO: Exiting. Runtime 0:00:03 
+
+25/01/22 (10:12:51) | INFO: New instance of bpytop version 1.0.68 started with pid 5403
+25/01/22 (10:12:51) | INFO: Loglevel set to INFO
+25/01/22 (10:13:00) | INFO: Exiting. Runtime 0:00:09 
+
+26/01/22 (13:50:18) | INFO: New instance of bpytop version 1.0.68 started with pid 16760
+26/01/22 (13:50:18) | INFO: Loglevel set to INFO
+26/01/22 (13:50:23) | INFO: Exiting. Runtime 0:00:05 
+
+27/01/22 (21:38:50) | INFO: New instance of bpytop version 1.0.68 started with pid 36312
+27/01/22 (21:38:50) | INFO: Loglevel set to INFO
+27/01/22 (21:40:53) | INFO: Exiting. Runtime 0:02:03 
+
+29/01/22 (11:28:44) | INFO: New instance of bpytop version 1.0.68 started with pid 4147
+29/01/22 (11:28:44) | INFO: Loglevel set to INFO
+29/01/22 (11:28:46) | INFO: Exiting. Runtime 0:00:03 
+
+31/01/22 (09:56:11) | INFO: New instance of bpytop version 1.0.68 started with pid 1598
+31/01/22 (09:56:11) | INFO: Loglevel set to INFO
+31/01/22 (09:57:12) | INFO: Exiting. Runtime 0:01:01 
+
+31/01/22 (12:36:32) | INFO: New instance of bpytop version 1.0.68 started with pid 10191
+31/01/22 (12:36:32) | INFO: Loglevel set to INFO
+31/01/22 (12:36:41) | INFO: Exiting. Runtime 0:00:08 
+
+31/01/22 (16:05:47) | INFO: New instance of bpytop version 1.0.68 started with pid 44807
+31/01/22 (16:05:47) | INFO: Loglevel set to INFO
+31/01/22 (16:05:51) | INFO: Exiting. Runtime 0:00:05 
+
+31/01/22 (21:23:17) | INFO: New instance of bpytop version 1.0.68 started with pid 54187
+31/01/22 (21:23:17) | INFO: Loglevel set to INFO
+31/01/22 (21:23:22) | INFO: Exiting. Runtime 0:00:05 
+
+31/01/22 (21:24:06) | INFO: New instance of bpytop version 1.0.68 started with pid 54277
+31/01/22 (21:24:06) | INFO: Loglevel set to INFO
+31/01/22 (21:24:10) | INFO: Exiting. Runtime 0:00:04 
+
+31/01/22 (21:25:31) | INFO: New instance of bpytop version 1.0.68 started with pid 54432
+31/01/22 (21:25:31) | INFO: Loglevel set to INFO
+31/01/22 (21:25:40) | INFO: Exiting. Runtime 0:00:08 
+
+01/02/22 (12:16:42) | INFO: New instance of bpytop version 1.0.68 started with pid 37254
+01/02/22 (12:16:42) | INFO: Loglevel set to INFO
+01/02/22 (12:16:44) | INFO: Exiting. Runtime 0:00:02 
+
+04/02/22 (16:29:42) | INFO: New instance of bpytop version 1.0.68 started with pid 15039
+04/02/22 (16:29:42) | INFO: Loglevel set to INFO
+04/02/22 (16:29:56) | INFO: Exiting. Runtime 0:00:14 
+
+04/02/22 (22:06:06) | INFO: New instance of bpytop version 1.0.68 started with pid 53165
+04/02/22 (22:06:06) | INFO: Loglevel set to INFO
+04/02/22 (22:06:10) | INFO: Exiting. Runtime 0:00:04 
+
+05/02/22 (01:28:45) | INFO: New instance of bpytop version 1.0.68 started with pid 69429
+05/02/22 (01:28:45) | INFO: Loglevel set to INFO
+05/02/22 (01:29:21) | INFO: Exiting. Runtime 0:00:36 
+
+05/02/22 (01:29:24) | INFO: New instance of bpytop version 1.0.68 started with pid 69445
+05/02/22 (01:29:24) | INFO: Loglevel set to INFO
+05/02/22 (01:29:35) | INFO: Exiting. Runtime 0:00:10 
+
+06/02/22 (20:40:30) | INFO: New instance of bpytop version 1.0.68 started with pid 76395
+06/02/22 (20:40:30) | INFO: Loglevel set to INFO
+06/02/22 (20:40:37) | INFO: Exiting. Runtime 0:00:07 
+
+06/02/22 (21:17:42) | INFO: New instance of bpytop version 1.0.68 started with pid 84508
+06/02/22 (21:17:42) | INFO: Loglevel set to INFO
+06/02/22 (21:35:27) | INFO: New instance of bpytop version 1.0.68 started with pid 85947
+06/02/22 (21:35:27) | INFO: Loglevel set to INFO
+06/02/22 (21:35:36) | INFO: Exiting. Runtime 0:00:09 
+
+07/02/22 (13:30:01) | INFO: New instance of bpytop version 1.0.68 started with pid 10246
+07/02/22 (13:30:01) | INFO: Loglevel set to INFO
+07/02/22 (13:30:02) | INFO: Exiting. Runtime 0:00:01 
+

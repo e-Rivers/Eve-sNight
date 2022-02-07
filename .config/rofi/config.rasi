@@ -12,7 +12,7 @@ configuration {
     font:                       "VictorMono Nerd Font 10";
     modi:                       [window,run,ssh,drun,windowcd,keys];
     show-icons:                 true;
-    icon-theme:                 "Papirus";
+    icon-theme:                 "ePapirus-Dark";
 
     kb-remove-to-eol:           "Control+U";
     kb-row-left:                "Alt+h,Alt+H";

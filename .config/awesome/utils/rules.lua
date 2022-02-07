@@ -9,7 +9,8 @@ awful.rules.rules = {
                      focus = awful.client.focus.filter,
                      raise = true,
                      screen = awful.screen.preferred,
-                     placement = awful.placement.no_overlap+awful.placement.no_offscreen
+                     placement = awful.placement.no_overlap+awful.placement.no_offscreen,
+                     titlebars_enabled = false
      }
     },
     { rule_any = {
@@ -52,13 +53,11 @@ awful.rules.rules = {
           placement = awful.placement.centered
       }},
 
-    -- Remove titlebars from normal clients and dialogs
-    { rule_any = {type = { "normal", "dialog" }}, 
-        properties = { titlebars_enabled = false } },
-
     -- Where to open certain applications
     { rule = { class = "Brave-browser" },
         properties = { tag = "3", switchtotag = true } },
+    { rule = { class = "Popcorn-Time" },
+        properties = { tag = "9", switchtotag = true } },
     { rule = { class = "Gimp-2.10" },
         properties = { tag = "5", switchtotag = true } },
     { rule = { class = "zoom" },

@@ -4,6 +4,7 @@ local apps = {
    text_editor = 'alacritty --command nvim',
    vscode = 'code',
    brave = 'brave',
+   agenda = "superproductivity",
    image_viewer = 'feh',
    photo_editor = 'gimp',
    screen_recorder = 'simplescreenrecorder',
