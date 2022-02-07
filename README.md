@@ -9,10 +9,10 @@
 
 <br/>
 <p align="center">
-<a href="#setup"><img width="150px" style="padding: 0 10px;" src=".assets/setup.png"></a>
-<a href="https://github.com/elenapan/dotfiles/wiki"><img width="150px" style="padding: 0 10px;" src=".assets/wiki.png"></a>
-<a href="https://github.com/elenapan/dotfiles/wiki/Gallery"><img width="150px" style="padding: 0 10px;" src=".assets/gallery.png"></a>
-<a href="#tipjar"><img width="150px" style="padding: 0 10px;" src=".assets/tipjar.png"></a>
+<a href=""><img width="150px" style="padding: 0 10px;" src=".assets/setup.png"></a>
+<a href=""><img width="150px" style="padding: 0 10px;" src=".assets/wiki.png"></a>
+<a href=""><img width="150px" style="padding: 0 10px;" src=".assets/gallery.png"></a>
+<a href=""><img width="150px" style="padding: 0 10px;" src=".assets/tipjar.png"></a>
 </p>
 
 <br />
@@ -49,15 +49,44 @@ This is not really an Operating System, but you already knew that... These are m
 | Package or utility | Why is it needed? |
 | --- | --- |
 | `awesome-git` | Well, its the graphical session the user will be logged in into, <i>ergo</i>, is the base of the system and it's awesome |
-| `rofi` | Used as application launcher, wifi menu, calculator, powermenu, etc |
 | `lightdm`  <br/>`light-locker`<br/> `lightdm-webkit2-greeter` | Display manager and lock screen (optional if you use another one) |
-| `pulseaudio` | Audio input and output management, you could use other one like <i>amixer</i> but you would have to reconfigure the dotfiles |
+| `pulseaudio` | Audio input and output management (used on dashboard and volume OSD), you could use other one like <i>amixer</i> but you would have to reconfigure the dotfiles |
 | `networkmanager` | Network management, you could use other one like <i>netctl</i> but you would have to reconfigure the dotfiles |
 | `VictorMono Nerd Font` | Font used by all apps (I personally like it because it makes italics look cursive). Again, you can use other one but you'll have to reconfigure the dotfiles |
-| `paru` | Helper to install AUR packages, you could use yay or another one but you'll have to reconfigure the package upgrade information on the dashboard |
+| `ranger`<br/> `thunar` | These are the file managers I use, one terminal based and the other GUI |
+| `paru` | Helper to install AUR packages, you could use <i>yay</i> or another one but you'll have to reconfigure the package upgrade widget on the dashboard |
+| `bat` | Substitute of cat that colorizes and uses a pager by default, used as alias and in dashboard to display the available package upgrades |
+| `redshift` | It's the package used to toggle night-light mode on dashboard (I set it to 1500:1500 but change it to your preferences) |
+| `upower` | This one is used to get the battery percentage status that is displayed on the dashboard |
+| `python-pillow` | This is a dependency to properly visualize images in your terminal from ranger file manager |
+| `networkmanager` <br/> `wpa_supplicant` <br/> `wireless_tools` | This ones are used to display to which network you are connected on the dashboard and also are used by the rofi wifi modi, reconfigure if you use another network manager such as <i>netctl</i> |
+| `picom` | Compositor to add blur, shadows and transparency to windows, among other features |
+| `brightnessctl` | Program used to adjust brightness of the display (used in brightness osd and dashboard), reconfigure the dotfiles if you use other one |
+| `rofi`<br/>`rofi-calc` | Used as application launcher, wifi menu, window switcher, powemenu and calculator |
+| `kitty` | The terminal emulator used by default on my configuration, if you rather use another one then reconfigure the dotfiles |
+| `brave-bin` | Brave browser so you can use the NightTab extension theme I made, actually it would work on any browser that supports that extension, I don't know if Firefox but at least Chromium-based browsers do |
+| `code-minimap` | Dependency to display the braille minimap on vim/neovim with the minimap plugin |
+| `flameshot` | Utility to take screenshots, you could use another one but you'll have to change the keybindings on awesomewm dotfiles |
+| `fortune-mod` | Used to display the fortunes on the dashboard, useless but it's cool to have it and its a dependency |
+| `zsh`<br/>`zsh-autosuggestions`<br/>`zsh-syntax-highlighting`<br/>`zsh-history-substring-search`<br/>`zsh-theme-powerlevel10k-git` | The ZSH shell and all the plugins to make it more usable and eye candy, I don't use OhMyZSH but you're free to do so |
+| `unimatrix-git` | This is actually useless, just to display the matrix effect on the terminal but I have an alias for it so it is a dependency, kinda |
+| `exa` | Just an <i>ls</i> but on steroids, alike unimatrix-git is not strictly a dependency but I have aliases for it on zsh |
+| `Adapta-Nokto-Eta` | The GTK theme I use, then again, use any you like (I hope you don't like light themes 🤢) |
+| `ePapirus-Dark` | Icon Pack theme I use, Sweet Line is my favorite but I thought It didn't match a lot with the style of the rice |
 
-## I N S T A L L A T I O N
+I think those are pretty much all of them, if I remember of any that is missing I'll add it.
 
+## I N S T A L L A T I O N&nbsp;&nbsp; &nbsp;&nbsp;'N&nbsp;&nbsp; &nbsp;&nbsp;S E T U P
+1. Install all the dependencies
+2. Clone this repo and place <u>everything</u> under your home directory (~), EXCEPT the BONUS directory.
+3. If you want the LightDM theme:
+- Extract the tar.gz file into /usr/share/lightdm-webkit/themes/
+- Edit /etc/lightdm/lightdm.conf and set greeter-session to <b>lightdm-webkit2-greeter</b>
+- Edit /etc/lightdm/lightdm-webkit2-greeter.conf and set webkit_theme to <b>Eve's Night</b>
+- To change a user or session you have to place the mouse over the section that you want to change and press either <kbd>h</kbd> or <kbd>l</kbd>
+4. If you want to make some changes to GTK I recommend you to install `lxappearance`, from there you can install and set icon packs, cursor themes and more.
+5. The weather widget requires an API key and some coordinates to work, so you can get the API key from [Open Weather](https://openweathermap.org/) and set that on the dashboard lua file (It's a pretty long file so just search for <i>weather</i> and it should be near, far, wherever you are 🎶... ok sorry, but it should be there).
+6. The basic keybindings are <kbd>Mod + b</kbd> to toggle the dock and <kbd>Mod + d</kbd> to toggle the dashboard, on the dashboard there's a button with a question mark icon, that will show you all of the other keybindings.
 
 ## D O T F I L E S&nbsp;&nbsp; &nbsp;&nbsp;S T R U C T U R E
 This section only describes the file structure of Neovim, Rofi and AwesomeWM config directories because are the ones that can get messy, the other ones are pretty straightforward to understand (in my humble opinion).
@@ -107,7 +136,8 @@ This section only describes the file structure of Neovim, Rofi and AwesomeWM con
 
 I don't know if I'll be maintaining this for too long 'cause it's a massive time investment.
 
-- [ ] Make a better documentation
+- [ ] Make a better documentation and clean the code (comments, tabs and spaces, variables, etc.)
+- [ ] Split the dashboard.lua file into separate ones (one for each widget) cause it's too long and can get messy
 - [ ] Hire the real TUX
 - [X] Tell everyone I use Arch, BTW
 - [ ] Fix some bugs (The ones I'm aware of; if you notice some bug or that there's something wrong with the system don't hesitate and tell me, don't say Lupus cause it's never Lupus)
