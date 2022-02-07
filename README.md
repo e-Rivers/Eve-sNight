@@ -43,9 +43,10 @@ This is not really an Operating System, but you already knew that... These are m
 - LightDM theme with support for profile pictures and multiple sessions
 - Rofi wifi menu (doesn't work on complex connections, such as WPA2 Enterprise)
 - Different wallpapers on each tag (useful to know in which one you are when the dock is hidden)
+- Brightness and volume OSD widgets for better visualization
 
 ## D E P E N D E N C I E S
-| Package | Why is it needed? |
+| Package or utility | Why is it needed? |
 | --- | --- |
 | `awesome-git` | Well, its the graphical session the user will be logged in into, <i>ergo</i>, is the base of the system and it's awesome |
 | `rofi` | Used as application launcher, wifi menu, calculator, powermenu, etc |
@@ -59,7 +60,31 @@ This is not really an Operating System, but you already knew that... These are m
 
 
 ## D O T F I L E S&nbsp;&nbsp; &nbsp;&nbsp;S T R U C T U R E
-
+This section only describes the file structure of Neovim, Rofi and AwesomeWM config directories because are the ones that can get messy, the other ones are pretty straightforward to understand (in my humble opinion).
+#### ROFI (~/.config/rofi)
+| Directory or file | Description (What you will find here) |
+| --- | --- |
+| colors/ | There's only one file here, the colorscheme so it becomes easy if you wanna change the colors |
+| scripts/ | Shell script files (bash) of additional rofi modis (powermenu and wifi menu) |
+| themes/ | Rasi files for each specific modi and also a general file used by default if no other one is specified |
+| config.rasi | Document with general setup such as font and icon pack, the configuration within these file are theme independent |
+#### NEOVIM (~/.config/nvim)
+| Directory or file | Description (What you will find here) |
+| --- | --- |
+| init.lua | General file that groups all the other ones and sets main configuration such as keybindings, tabs and folding |
+| colors/ | Just like in rofi, this directory only contains the colorscheme file for Neovim's Eve's Night theme |
+| lua/ | In this directory there are specific configuration files for each plugin (minimap, nvimtree, colorizer, etc.) |
+| lua/modules/ | There's only one file here, is the one used to create the statusline |
+| pack/default/start/ | Here are located all the github repos of the plugins used and also a simple shell script used to manage them |
+#### AWESOMEWM (~/.config/awesome)
+| Directory or file | Description (What you will find here) |
+| --- | --- |
+| bling/ | It's the repo of a set of utilities for the AwesomeWM (tag preview, cool layouts, etc.) |
+| components/ | This directory contains configuration of all the elements that are part of the system (dashboard, dock, volume and brightness OSD) |
+| libs/ | There's only one file here, which is a json parser, necessary for the weather widget |
+| rc.lua | General configuration file that imports all the modules and sets up the wallpaper on each tag |
+| theme/ | This directory contains files and configurations for the theme (colorscheme, wallpapers, icons, etc.) |
+| utils/ | This directory contains configuration to give functionality to the system (keybindings, rules, notifications, etc.) |
 
 ## S C R E E N S H O T S
 | [LightDM](https://archlinux.org/packages/community/x86_64/lightdm-webkit2-greeter/) display manager and lock screen |
@@ -77,3 +102,12 @@ This is not really an Operating System, but you already knew that... These are m
 | Miscellaneous Screenshots |
 | --- |
 | ![Screenshot](https://lh3.googleusercontent.com/pw/AM-JKLV5GPVBChokEqSqXRUOQW4jQZMK7ficdSSt3C61rVO8YKqBYTfqGU-mab9AzmymaTxnd3sfS8EbtWv4axCqL9T7hgRcCEq4Xde1q-rQM2kPNRznQInCEnbOSTnselEUTAnZHw2C9fKCfjSXyYq3rkMB=w1203-h676-no?authuser=0) <br/> ![Screenshot](https://lh3.googleusercontent.com/pw/AM-JKLVvnbdisSsCHeb97K6kQtiwuN-SyLeI8xCLBu0vNuBnuyEV3DExGSeB04Wf55oTj_vEgsx0Es31zpk2bwhquelfqfuIFnYK4y-sAdOHlaAv5Z5ztBhH3TrSiXdj3rmWJH8y_wC0PWr26KhFgGDPgbcj=w1203-h676-no?authuser=0) <br/> ![Screenshot](https://lh3.googleusercontent.com/pw/AM-JKLVuvBZCE4ovyQp6emwai-extj06edAT2aiYo4L0odbFdj3p_WvsKLCjYkOMb5IpIueXTtUAQGmbNo4ig4RExAIrCv-UQO93dVw_haA3x6FKZkQQR7Y5rW2lPvnZwmwogPrxadrN7EHZT56t8CZogE9Q=w1206-h676-no?authuser=0) <br/> ![Screenshot](https://lh3.googleusercontent.com/pw/AM-JKLV_KbJB1j6Cw2ws7eitY1oveWfQcAiq9MxGrBOqiCotj4SZ6Gl9DqfirBxSZ6KhIGY2kENBhsgl2YQDtQzfEpSNUxhzdByIfYeojX--F1l6OavO0WIWtG0M3ckyYr555E0-F5hTnwF9TIeqXMYlNMfM=w1203-h676-no?authuser=0) |
+
+## T O D O
+
+I don't know if I'll be maintaining this for too long 'cause it's a massive time investment.
+
+- [ ] Make a better documentation
+- [ ] Hire the real TUX
+- [X] Tell everyone I use Arch, BTW
+- [ ] Fix some bugs (The ones I'm aware of; if you notice some bug or that there's something wrong with the system don't hesitate and tell me, don't say Lupus cause it's never Lupus)
