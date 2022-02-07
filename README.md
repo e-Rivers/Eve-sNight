@@ -15,6 +15,12 @@
 <a href="https://github.com/e-Rivers/Eve-sNight#s-c-r-e-e-n-s-h-o-t-s"><img width="150px" style="padding: 0 10px;" src="https://lh3.googleusercontent.com/pw/AM-JKLVjpryXMg5zbx7wKzxWfmkFHkzimamVrRQC3uBS0T53lGPmf4RYewe_YUO9eKUFqoj_pjsx5XQAxJKFiwPU_WY0nTg324Ad-iKsD1sHo-32ie_UpVO7eXj6S9BYWTjJvsAih4CGFwCEAafcm5-1I3Zb=w750-h250-no?authuser=0"></a>
 </p>
 
+<div align='center'>
+
+![maintained](https://img.shields.io/maintenance/yes/2022?logo=checkmarx&logoColor=white&style=for-the-badge) ![contributions](https://img.shields.io/github/last-commit/e-Rivers/Eve-sNight?logo=github&style=for-the-badge) ![HitCount](https://img.shields.io/github/issues-pr/e-Rivers/Eve-sNight?logo=semantic%20web&style=for-the-badge)
+
+</div>
+
 <br />
 This is not really an Operating System, but you already knew that... These are my personal dotfiles for the Awesome Window Manager, Light Display Manager, Kitty Terminal Emulator and much more stuff to rice Arch Linux. I riced it so it wasn't only eye-candy, but also functional; nevertheless, there are features you may dislike or rather change (for example, I don't like having the dock or titlebars) so feel free to take whatever you want and adapt it to your needs.
 
