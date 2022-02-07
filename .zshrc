@@ -42,6 +42,8 @@ alias lx="exa --icons --grid --all"
 alias ll="exa --icons --grid --all --long"
 alias lt="exa --icons --grid --all --tree --level 2"
 alias matrix="unimatrix -s 90 -c magenta -b -f -l sssssgn"
+alias cat="bat -nf --theme=base16 --paging=always"
+alias spp="/home/$(whoami)/.config/misc/set-profile-picture.sh"
 
 # }}}
 
