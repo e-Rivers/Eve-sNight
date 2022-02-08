@@ -114,9 +114,8 @@ This section only describes the file structure of Neovim, Rofi and AwesomeWM con
 #### AWESOMEWM (~/.config/awesome)
 | Directory or file | Description (What you will find here) |
 | --- | --- |
-| bling/ | It's the repo of a set of utilities for the AwesomeWM (tag preview, cool layouts, etc.) |
 | components/ | This directory contains configuration of all the elements that are part of the system (dashboard, dock, volume and brightness OSD) |
-| libs/ | There's only one file here, which is a json parser, necessary for the weather widget |
+| libs/ | Here are external files that were not created by me (a JSON parser and Bling utilities) |
 | rc.lua | General configuration file that imports all the modules and sets up the wallpaper on each tag |
 | theme/ | This directory contains files and configurations for the theme (colorscheme, wallpapers, icons, etc.) |
 | utils/ | This directory contains configuration to give functionality to the system (keybindings, rules, notifications, etc.) |
