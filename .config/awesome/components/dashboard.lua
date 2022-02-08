@@ -238,7 +238,7 @@ end
 
 local args = user_args or {}
 
-args.api_key="aa5eba1f08c1abeb181a6e7d1830bd97"
+args.api_key="<YOUR API KEY HERE>"
 args.coordinates = {19.6469, -99.2467}
 args.show_daily_forecast = true
 
