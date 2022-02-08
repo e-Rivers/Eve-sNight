@@ -1,32 +1,33 @@
--- ===================================================================
--- Initialization
--- ===================================================================
+--   vim:fileencoding=utf-8:foldmethod=marker
+--
+--   AwesomeWM Brightness OSD definition file 
+--
+--   Author: Emilio Rivers (e-Rivers)
 
 local wibox = require("wibox")
 local awful = require("awful")
 local gears = require("gears")
 local beautiful = require("beautiful")
 local colors = require("theme.colorscheme")
-local icons = require("utils.icon")
+local icons = require("utils.icons")
 
 local bar_width = 300
 local bar_height = 40
+-- IMPORTANT!!!!!!!!!!
+-- This was the corresponding max brightness value for my system, yours may be different so check that
+-- if you notice a wrong behaviour
 local max_bright = 976
 local screen = awful.screen.focused()
 
--- ===================================================================
--- Appearance & Functionality
--- ===================================================================
-
-
-local volume_icon = wibox.widget {
+-- The icon element
+local brightness_icon = wibox.widget {
     forced_width = 25,
     forced_height = 25,
    widget = wibox.widget.imagebox
 }
 
--- create the volume_adjust component
-local volume_adjust = wibox {
+-- The brightness OSD itself
+local brightness_adjust = wibox {
    screen = awful.screen.focused(),
    x = (screen.geometry.width/2) - (bar_width/2),
    y = screen.geometry.height - (screen.geometry.height / 4),
@@ -37,7 +38,8 @@ local volume_adjust = wibox {
    ontop = true,
 }
 
-local volume_bar = wibox.widget{
+-- The percentage bar
+local brightness_bar = wibox.widget{
    widget = wibox.widget.progressbar,
    color = colors.col_5X,
    background_color = colors.col_6X,
@@ -45,54 +47,54 @@ local volume_bar = wibox.widget{
    value = 0
 }
 
-volume_adjust:setup {
+-- The brightness OSD structure
+brightness_adjust:setup {
 
        wibox.container.margin(
-          volume_icon, 10, 0, 10, 10
+          brightness_icon, 10, 0, 10, 10
        ),
    {
        wibox.container.margin(
-         volume_bar, 10,10,10,10
+         brightness_bar, 10,10,10,10
          ),
          layout = wibox.layout.align.horizontal
      },
    layout = wibox.layout.align.horizontal
 }
 
--- create a 4 second timer to hide the volume adjust
--- component whenever the timer is started
-local hide_volume_adjust = gears.timer {
+-- Delay to specify the time the OSD will be active
+local activate_delay = gears.timer {
    timeout = 4,
    autostart = true,
    callback = function()
-      volume_adjust.visible = false
+      brightness_adjust.visible = false
    end
 }
 
--- show volume-adjust when "volume_change" signal is emitted
+-- Show the OSD when the corresponding signal is received
 awesome.connect_signal("indicate::brightness",
    function()
 
-      -- set new volume value
+       -- Get the value
       awful.spawn.easy_async_with_shell(
          "sleep 0.1 && brightnessctl get",
          function(stdout) 
-
-                volume_bar.value = tonumber(stdout)
+                -- Set the icon and percentage depending on the value obtained
+                brightness_bar.value = tonumber(stdout)
 
                 if (tonumber(stdout) > (max_bright/2)) then
-                    volume_icon.image=gears.surface.load_uncached(icons.png.bright_high)
+                    brightness_icon.image=gears.surface.load_uncached(icons.img.bright_high)
                 else
-                    volume_icon.image=gears.surface.load_uncached(icons.png.bright_low)
+                    brightness_icon.image=gears.surface.load_uncached(icons.img.bright_low)
                end
          end
       )
 
-      -- make volume_adjust component visible
-      if volume_adjust.visible then
-         hide_volume_adjust:again()
+      -- Manage the visibility and resets timer if brightness OSD was already active
+      if brightness_adjust.visible then
+         activate_delay:again()
       else
-         volume_adjust.visible = true
-         hide_volume_adjust:start()
+         brightness_adjust.visible = true
+         activate_delay:start()
       end
    end)

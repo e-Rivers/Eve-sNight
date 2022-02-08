@@ -1,3 +1,9 @@
+--   vim:fileencoding=utf-8:foldmethod=marker
+--
+--   AwesomeWM window rules definition file 
+--
+--   Author: Emilio Rivers (e-Rivers)
+
 local ruled = require('ruled')
 local awful = require('awful')
 local beautiful = require('beautiful')

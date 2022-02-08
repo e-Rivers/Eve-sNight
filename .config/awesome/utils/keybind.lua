@@ -1,9 +1,15 @@
-local apps = require('utils.apps')
-local awful = require('awful')
+--   vim:fileencoding=utf-8:foldmethod=marker
+--
+--   AwesomeWM keybindings definition file (Both client and global)
+--
+--   Author: Emilio Rivers (e-Rivers)
+
+local apps = require("utils.apps")
+local awful = require("awful")
 local naughty = require("naughty")
 
 local HOME = os.getenv("HOME")
-local dashboard = require('components.dashboard')
+local dashboard = require("components.dashboard")
 
 -- Key Definitions
 SUPER = "Mod4"
@@ -13,12 +19,6 @@ CTRL = "Control"
 
 -- General keybindings {{{
 awful.keyboard.append_global_keybindings({
-    awful.key({ SUPER, SHIFT }, "Delete",
-        function() 
-            awful.spawn.with_shell(HOME.."/.config/rofi/scripts/powermenu.sh")
-        end,
-        {description = "Display Powermenu (Exit Options)", group = "AWESOME"}),
-
     awful.key({ SUPER }, "b", 
         function() 
             s = awful.screen.focused()
@@ -108,17 +108,17 @@ awful.keyboard.append_global_keybindings({
 
 -- Navigation through windows keybindings {{{
 awful.keyboard.append_global_keybindings({
-   awful.key({ SUPER }, 'k',
+   awful.key({ SUPER }, "k",
       function()
           awful.client.focus.byidx(-1)
       end,
-      { description = 'Gp to next window', group = "CLIENT" }),
+      { description = "Gp to next window", group = "CLIENT" }),
 
-   awful.key({ SUPER }, 'j',
+   awful.key({ SUPER }, "j",
       function() 
           awful.client.focus.byidx(1) 
       end,
-      { description = 'Gp to prev window', group = "CLIENT" }),
+      { description = "Gp to prev window", group = "CLIENT" }),
 
     awful.key({ SUPER }, "Down",
         function()
@@ -149,17 +149,17 @@ awful.keyboard.append_global_keybindings({
 
 -- Navigation through tags keybindings {{{
 awful.keyboard.append_global_keybindings({
-   awful.key({ SUPER, SHIFT }, 'j',
+   awful.key({ SUPER, SHIFT }, "j",
       awful.tag.viewnext,
-      { description = 'Go to next workspace', group = 'Tag' }),
+      { description = "Go to next workspace", group = "TAG" }),
 
-   awful.key({ SUPER, SHIFT }, 'k',
+   awful.key({ SUPER, SHIFT }, "k",
       awful.tag.viewprev,
-      { description = 'Go to previous workspace', group = 'Tag' }),
+      { description = "Go to previous workspace", group = "TAG" }),
 
-   awful.key({ SUPER, ALT }, "b",
+   awful.key({ SUPER, SHIFT }, "b",
       awful.tag.history.restore,
-      { description = 'Go to previous workspace', group = 'Tag' })
+      { description = "Go to previous workspace in history", group = "TAG" })
 })
 local ntags = 10
 for i = 1, ntags do
@@ -172,7 +172,7 @@ for i = 1, ntags do
                     tag:view_only()
                 end
             end,
-            {description = "view tag #"..i, group = "tag"}),
+            {description = "view tag #"..i, group = "TAG"}),
 
         -- Toggle tag display.
         awful.key({ SUPER, CTRL }, "#" .. i + 9,
@@ -183,7 +183,7 @@ for i = 1, ntags do
                     awful.tag.viewtoggle(tag)
                 end
             end,
-            {description = "toggle tag #" .. i, group = "tag"}),
+            {description = "toggle tag #" .. i, group = "TAG"}),
 
         -- Move client to tag.
         awful.key({ SUPER, SHIFT }, "#" .. i + 9,
@@ -195,7 +195,7 @@ for i = 1, ntags do
                     end
                 end
             end,
-            {description = "move focused client to tag #"..i, group = "tag"}),
+            {description = "move focused client to tag #"..i, group = "TAG"}),
 
         -- Move all visible clients to tag and focus that tag
         awful.key({ SUPER, "Mod1" }, "#" .. i + 9,
@@ -209,7 +209,7 @@ for i = 1, ntags do
                     tag:view_only()
                 end
             end,
-            {description = "move all visible clients to tag #"..i, group = "tag"}),
+            {description = "move all visible clients to tag #"..i, group = "TAG"}),
 
         -- Toggle tag on focused client.
         awful.key({ SUPER, CTRL, SHIFT }, "#" .. i + 9,
@@ -221,21 +221,13 @@ for i = 1, ntags do
                     end
                 end
             end,
-            {description = "toggle focused client on tag #" .. i, group = "tag"})
+            {description = "toggle focused client on tag #" .. i, group = "TAG"})
         })
 end
 -- }}}
 
 -- Navigation through screens/monitors keybindings {{{
 awful.keyboard.append_global_keybindings({
-      -- Move client to screen
-      awful.key(
-         { SUPER, SHIFT }, "o",
-         function(c) 
-             c:move_to_screen() 
-         end,
-         { description = "Move client to next screen", group = "CLIENT" }
-      ),
       -- Move to next and previous screen
       awful.key({ SUPER, CTRL }, "j",
         function()
@@ -252,10 +244,19 @@ awful.keyboard.append_global_keybindings({
 
 })
 -- }}}
+
 -- Window alteration keybindings {{{
 client.connect_signal("request::default_keybindings", function()
    -- Full screen
    awful.keyboard.append_client_keybindings({
+      -- Move client to screen
+      awful.key(
+         { SUPER, SHIFT }, "o",
+         function(c) 
+             c:move_to_screen() 
+         end,
+         { description = "Move client to next screen", group = "CLIENT" }
+      ),
       awful.key({ SUPER, SHIFT }, "f",
          function(c)
             c.fullscreen = not c.fullscreen
@@ -337,6 +338,12 @@ end)
 
 -- Rofi keybindings {{{
 awful.keyboard.append_global_keybindings({
+    awful.key({ SUPER, SHIFT }, "Delete",
+        function() 
+            awful.spawn.with_shell(HOME.."/.config/rofi/scripts/powermenu.sh")
+        end,
+        {description = "Display Powermenu (Exit Options)", group = "ROFI"}),
+
     awful.key({ SUPER }, "a",
         function()
             awful.spawn.with_shell("rofi -show drun -theme themes/eves-night-rofi_launcher.rasi")
@@ -375,13 +382,13 @@ awful.keyboard.append_global_keybindings({
       function() 
           awful.layout.inc(1) 
       end,
-      { description = "select next", group = "layout" }),
+      { description = "select next", group = "LAYOUT" }),
 
    awful.key({ SUPER, SHIFT }, "space",
       function() 
           awful.layout.inc(-1) 
       end,
-      { description = "select previous", group = "layout" }),
+      { description = "select previous", group = "LAYOUT" }),
 
    awful.key({ SUPER, CTRL}, "u",
       awful.client.urgent.jumpto,
@@ -395,37 +402,37 @@ awful.keyboard.append_global_keybindings({
       function() 
           awful.tag.incmwfact(0.05)  
       end,
-      { description = "increase master width factor", group = "layout" }),
+      { description = "increase master width factor", group = "LAYOUT" }),
 
    awful.key({ SUPER }, "h",
       function() 
           awful.tag.incmwfact(-0.05)
       end,
-      { description = "decrease master width factor", group = "layout" }),
+      { description = "decrease master width factor", group = "LAYOUT" }),
 
    awful.key({ SUPER, SHIFT }, "l",
       function() 
           awful.tag.incnmaster(1, nil, true) 
       end,
-      { description = "increase the number of master clients", group = "layout" }),
+      { description = "increase the number of master clients", group = "LAYOUT" }),
 
    awful.key({ SUPER, SHIFT }, "h",
       function() 
           awful.tag.incnmaster(-1, nil, true) 
       end,
-      { description = "decrease the number of master clients", group = "layout" }),
+      { description = "decrease the number of master clients", group = "LAYOUT" }),
 
     awful.key({ SUPER, CTRL }, "l",
         function()
             awful.tag.incncol(1, nil, true)
         end,
-        { description = "Increase the number of columns", groupt = "LAYOUT" }),
+        { description = "Increase the number of columns", group = "LAYOUT" }),
 
     awful.key({ SUPER, CTRL }, "h",
         function()
             awful.tag.incncol(-1, nil, true)
         end,
-        { description = "Decrease the number of columns", groupt = "LAYOUT" })
+        { description = "Decrease the number of columns", group = "LAYOUT" })
 })
 -- }}}
 
@@ -442,51 +449,51 @@ awful.keyboard.append_global_keybindings({
          dashboard.visible = false
       end
    end,
-   { description = 'toggle dashboard', group = 'awesome' }),
+   { description = "toggle dashboard", group = "AWESOME" }),
 
 })
 -- }}}
 
 -- Audio and brightness keybindings {{{
 awful.keyboard.append_global_keybindings({
-   awful.key({}, 'XF86AudioMic',
+   awful.key({}, "XF86AudioMic",
       function()
           awful.spawn("pactl set-source-mute @DEFAULT_SOURCE@ toggle") 
       end,
-      { description = 'Toggle microphone', group = 'media' }),
+      { description = "Toggle microphone", group = "AUDIO" }),
 
-   awful.key({}, 'XF86AudioMute',
+   awful.key({}, "XF86AudioMute",
       function() 
-        awful.spawn('pactl set-sink-mute @DEFAULT_SINK@ toggle') 
+        awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle") 
         if dashboard.visible then
             awesome.emit_signal("dashboard::update_info::volume")
         else
             awesome.emit_signal("indicate::volume")
         end
       end,
-      { description = 'Mute audio', group = 'media' }),
+      { description = "Mute audio", group = "AUDIO" }),
 
    awful.key({}, "XF86AudioRaiseVolume",
       function() 
-          awful.spawn('pactl set-sink-volume @DEFAULT_SINK@ +5%') 
+          awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%") 
         if dashboard.visible then
             awesome.emit_signal("dashboard::update_info::volume")
         else
             awesome.emit_signal("indicate::volume")
         end
       end,
-      { description = "increase volume", group = "media" }),
+      { description = "increase volume", group = "AUDIO" }),
 
    awful.key({}, "XF86AudioLowerVolume",
       function()
-          awful.spawn('pactl set-sink-volume @DEFAULT_SINK@ -5%')
+          awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")
         if dashboard.visible then
             awesome.emit_signal("dashboard::update_info::volume")
         else
             awesome.emit_signal("indicate::volume")
         end
       end,
-      { description = "decrease volume", group = "media" }),
+      { description = "decrease volume", group = "AUDIO" }),
 
     awful.key({ }, "XF86MonBrightnessUp", 
         function() 

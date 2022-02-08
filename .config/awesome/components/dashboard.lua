@@ -1,25 +1,32 @@
-local wibox = require('wibox')
-local dpi = require("beautiful.xresources").apply_dpi
+--   vim:fileencoding=utf-8:foldmethod=marker
+--
+--   AwesomeWM utility dashboard definition file 
+--   This is the largest file around here, I'll probably be modifying it
+--   so that each widget is on a separate file
+--
+--   Author: Emilio Rivers (e-Rivers)
+
+local wibox = require("wibox")
 local color = require("beautiful.xresources").get_current_theme()
 local colors = require("theme.colorscheme")
-local awful = require('awful')
-local beautiful = require('beautiful')
-local gears = require('gears')
-local icon = require('utils.icon')
+local awful = require("awful")
+local beautiful = require("beautiful")
+local gears = require("gears")
+local icons = require("utils.icons")
 local apps = require("utils.apps")
 local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 
-local home = os.getenv('HOME')
+local HOME = os.getenv("HOME")
 
+-- Basic necessary constants
 local box_gap = 10
 local col1_width = 250
 local col2_width = 400
 local col3_width = 175
 
-local texture_img = gears.surface(home.."/.config/awesome/theme/wallpapers/widgets-texture.png")
-
-local image_file = gears.surface(home.."/.config/awesome/theme/wallpapers/wallpaper1-blur.jpg")
+-- Function to resize and set the wallpaper so it fits the entire screen
+local image_file = gears.surface(HOME.."/.config/awesome/theme/wallpapers/wallpaper1-blur.jpg")
 local img_width, img_height = gears.surface.get_size(image_file)
 local function set_background_img(_, cr, width, height)
     cr:scale(width / img_width, height / img_height)
@@ -27,16 +34,16 @@ local function set_background_img(_, cr, width, height)
     cr:paint()
 end
 
+-- Dashboard's Definition
 local dashboard = wibox {
    visible = false,
    ontop = true,
-   type = 'normal',
-   bgimage = set_background_img
+   type = "normal",
 
 }
-
 awful.placement.maximize(dashboard)
 
+-- Function to toggle dashboard's visibility
 local function dashboard_visibility()
    if dashboard.visible == true then
       dashboard.visible = false
@@ -45,13 +52,17 @@ local function dashboard_visibility()
    end
 end
 
+-- Function to resize and set the wallpaper of the widgets so it fits the size of their respective containers
+local texture_img = gears.surface(HOME.."/.config/awesome/theme/wallpapers/widgets-texture.png")
 local tex_width, tex_height = gears.surface.get_size(texture_img)
 local function set_texture_img(_, cr, width, height)
     cr:scale(width / tex_width, height / tex_height)
     cr:set_source_surface(texture_img)
     cr:paint()
 end
-local function create_box(widget, width, height, bg, has_border)
+
+-- Function to create a widget container
+local function widget_container(widget, width, height, bg, has_border)
    local container = wibox.container.background()
    if bg then
        container.bg = bg
@@ -67,14 +78,10 @@ local function create_box(widget, width, height, bg, has_border)
    container.forced_height = height
    container.forced_width = width
    local box_widget = wibox.widget {
-      -- gap between box
       {
-         -- container
          {
-            -- center horizontal
             nil,
             {
-               --  center vertical
                nil,
                widget,
                layout = wibox.layout.align.vertical,
@@ -96,16 +103,16 @@ end
 local clock_icon = wibox.widget {
     forced_width = 30,
     forced_height = 30,
-    image = icon.png.clock,
+    image = icons.img.clock,
     widget = wibox.widget.imagebox
 }
 
 local time = wibox.widget {
    {
-      valign = 'center',
-      align = 'center',
-      font = 'VictorMono Nerd Font 17.5',
-      format = '<b>%H\n    %M</b>',
+      valign = "center",
+      align = "center",
+      font = "VictorMono Nerd Font 17.5",
+      format = "<b>%H\n    %M</b>",
       widget = wibox.widget.textclock,
    },
    fg = colors.col_6L,
@@ -122,21 +129,17 @@ local clock = wibox.widget {
    layout = wibox.layout.fixed.vertical
 }
 
-local clock_box = create_box(clock, col2_width/5, 115, beautiful.bg_normal, true)
+local clock_box = widget_container(clock, col2_width/5, 115, beautiful.bg_normal, true)
 
 -- }}}
 
 -- Weather Information {{{
+-- This widget is an oversimplified version of the one made by streetturtle 
+-- (https://github.com/streetturtle/awesome-wm-widgets/tree/master/weather-widget)
 
-local awful = require("awful")
-local watch = require("awful.widget.watch")
 local json = require("libs.json")
 local naughty = require("naughty")
-local wibox = require("wibox")
-local gears = require("gears")
-local beautiful = require("beautiful")
 
-local HOME_DIR = os.getenv("HOME")
 local GET_FORECAST_CMD = [[bash -c "curl -s --show-error -X GET '%s'"]]
 
 local function split_str(text)
@@ -158,8 +161,8 @@ end
 local weather_widget = {}
 local warning_shown = false
 local tooltip = awful.tooltip {
-    mode = 'outside',
-    preferred_positions = {'bottom'}
+    mode = "outside",
+    preferred_positions = {"bottom"}
 }
 
 --- Maps openWeatherMap icon name to file name w/o extension
@@ -203,83 +206,82 @@ local function fahrenheit_to_celsius(f) return (f - 32) * 5 / 9 end
 
 local function gen_temperature_str(temp, fmt_str, show_other_units, units)
     local temp_str = string.format(fmt_str, temp)
-    local s = temp_str .. '°' .. (units == 'metric' and 'C' or 'F')
+    local s = temp_str .. "°" .. (units == "metric" and "C" or "F")
 
     if (show_other_units) then
         local temp_conv, units_conv
-        if (units == 'metric') then
+        if (units == "metric") then
             temp_conv = celsius_to_fahrenheit(temp)
-            units_conv = 'F'
+            units_conv = "F"
         else
             temp_conv = fahrenheit_to_celsius(temp)
-            units_conv = 'C'
+            units_conv = "C"
         end
 
         local temp_conv_str = string.format(fmt_str, temp_conv)
-        s = s .. ' ' .. '(' .. temp_conv_str .. '°' .. units_conv .. ')'
+        s = s .. " " .. "(" .. temp_conv_str .. "°" .. units_conv .. ")"
     end
     return s
 end
 
 local function uvi_index_color(uvi)
     local color
-    if uvi >= 0 and uvi < 3 then color = '#A3BE8C'
-    elseif uvi >= 3 and uvi < 6 then color = '#EBCB8B'
-    elseif uvi >= 6 and uvi < 8 then color = '#D08770'
-    elseif uvi >= 8 and uvi < 11 then color = '#BF616A'
-    elseif uvi >= 11 then color = '#B48EAD'
+    if uvi >= 0 and uvi < 3 then color = "#A3BE8C"
+    elseif uvi >= 3 and uvi < 6 then color = "#EBCB8B"
+    elseif uvi >= 6 and uvi < 8 then color = "#D08770"
+    elseif uvi >= 8 and uvi < 11 then color = "#BF616A"
+    elseif uvi >= 11 then color = "#B48EAD"
     end
 
-    return '<span weight="bold" foreground="' .. color .. '">' .. uvi .. '</span>'
+    return '<span weight="bold" foreground="' .. color .. '">' .. uvi .. "</span>"
 end
 
--------------------------------------------
 local args = user_args or {}
 
-args.api_key='<YOUR API KEY HERE>'
+args.api_key="aa5eba1f08c1abeb181a6e7d1830bd97"
 args.coordinates = {19.6469, -99.2467}
 args.show_daily_forecast = true
 
 --- Validate required parameters
 if args.coordinates == nil or args.api_key == nil then
     show_warning("Required parameters are not set: " ..
-                 (args.coordinates == nil and '<b>coordinates</b>' or '') ..
-                 (args.api_key == nil and ', <b>api_key</b> ' or ''))
+                 (args.coordinates == nil and "<b>coordinates</b>" or "") ..
+                 (args.api_key == nil and ", <b>api_key</b> " or ""))
     return
 end
 
 local coordinates = args.coordinates
 local api_key = args.api_key
 local font_name = args.font_name or beautiful.font:gsub("%s%d+$", "")
-local units = args.units or 'metric'
+local units = args.units or "metric"
 local time_format_12h = args.time_format_12h
 local both_units_widget = args.both_units_widget or false
 local show_daily_forecast = args.show_daily_forecast
-local icon_pack_name = args.icons or 'VitalyGorbachev'
-local icons_extension = args.icons_extension or '.svg'
+local icon_pack_name = args.icons or "weather-icons"
+local icons_extension = args.icons_extension or ".svg"
 local timeout = args.timeout or 120
 
-local ICONS_DIR = home.."/.config/awesome/theme/icons/" .. icon_pack_name .. '/'
+local ICONS_DIR = HOME.."/.config/awesome/theme/icons/" .. icon_pack_name .. "/"
 local owm_one_cal_api =
-    ('https://api.openweathermap.org/data/2.5/onecall' ..
-        '?lat=' .. coordinates[1] .. '&lon=' .. coordinates[2] .. '&appid=' .. api_key ..
-        '&units=' .. units .. '&exclude=minutely' ..
-        (show_daily_forecast == false and ',daily' or ''))
+    ("https://api.openweathermap.org/data/2.5/onecall" ..
+        "?lat=" .. coordinates[1] .. "&lon=" .. coordinates[2] .. "&appid=" .. api_key ..
+        "&units=" .. units .. "&exclude=minutely" ..
+        (show_daily_forecast == false and ",daily" or ""))
 
 weather_widget = wibox.widget {
     {
         {
             {
                 {
-                    id = 'icon',
+                    id = "icon",
                     resize = true,
                     widget = wibox.widget.imagebox
                 },
-                valign = 'center',
+                valign = "center",
                 widget = wibox.container.place,
             },
             {
-                id = 'txt',
+                id = "txt",
                 widget = wibox.widget.textbox
             },
             layout = wibox.layout.fixed.horizontal,
@@ -290,10 +292,10 @@ weather_widget = wibox.widget {
     },
     widget = wibox.container.background,
     set_image = function(self, path)
-        self:get_children_by_id('icon')[1].image = path
+        self:get_children_by_id("icon")[1].image = path
     end,
     set_text = function(self, text)
-        self:get_children_by_id('txt')[1].text = text
+        self:get_children_by_id("txt")[1].text = text
     end
 }
 
@@ -301,19 +303,19 @@ local current_weather_widget = wibox.widget {
     {
         {
             {
-                id = 'icon',
+                id = "icon",
                 resize = true,
                 forced_width = 128,
                 forced_height = 128,
                 widget = wibox.widget.imagebox
             },
-            align = 'center',
+            align = "center",
             widget = wibox.container.place
         },
         {
-            id = 'description',
-            font = font_name .. ' 10',
-            align = 'center',
+            id = "description",
+            font = font_name .. " 10",
+            align = "center",
             widget = wibox.widget.textbox
         },
         forced_width = 128,
@@ -322,35 +324,35 @@ local current_weather_widget = wibox.widget {
     {
         {
             {
-                id = 'temp',
-                font = font_name .. ' 36',
+                id = "temp",
+                font = font_name .. " 36",
                 widget = wibox.widget.textbox
             },
             {
-                id = 'feels_like_temp',
-                align = 'center',
-                font = font_name .. ' 9',
+                id = "feels_like_temp",
+                align = "center",
+                font = font_name .. " 9",
                 widget = wibox.widget.textbox
             },
             layout = wibox.layout.fixed.vertical
         },
         {
             {
-                id = 'wind',
-                font = font_name .. ' 9',
+                id = "wind",
+                font = font_name .. " 9",
                 widget = wibox.widget.textbox
             },
             {
-                id = 'humidity',
-                font = font_name .. ' 9',
+                id = "humidity",
+                font = font_name .. " 9",
                 widget = wibox.widget.textbox
             },
             {
-                id = 'uv',
-                font = font_name .. ' 9',
+                id = "uv",
+                font = font_name .. " 9",
                 widget = wibox.widget.textbox
             },
-            expand = 'inside',
+            expand = "inside",
             layout = wibox.layout.align.vertical
         },
         spacing = 16,
@@ -360,19 +362,18 @@ local current_weather_widget = wibox.widget {
     forced_width = 300,
     layout = wibox.layout.flex.horizontal,
     update = function(self, weather)
-        self:get_children_by_id('icon')[1]:set_image(
+        self:get_children_by_id("icon")[1]:set_image(
             ICONS_DIR .. icon_map[weather.weather[1].icon] .. icons_extension)
-        self:get_children_by_id('temp')[1]:set_text(gen_temperature_str(weather.temp, '%.0f', false, units))
-        self:get_children_by_id('feels_like_temp')[1]:set_text(
-            "Feels like " .. gen_temperature_str(weather.feels_like, '%.0f', false, units))
-        self:get_children_by_id('description')[1]:set_text(weather.weather[1].description)
-        self:get_children_by_id('wind')[1]:set_markup(
-            "Wind: " .. '<b>' .. weather.wind_speed .. 'm/s (' .. to_direction(weather.wind_deg) .. ')</b>')
-        self:get_children_by_id('humidity')[1]:set_markup("Humidity: " .. '<b>' .. weather.humidity .. '%</b>')
-        self:get_children_by_id('uv')[1]:set_markup("UV: " .. uvi_index_color(weather.uvi))
+        self:get_children_by_id("temp")[1]:set_text(gen_temperature_str(weather.temp, "%.0f", false, units))
+        self:get_children_by_id("feels_like_temp")[1]:set_text(
+            "Feels like " .. gen_temperature_str(weather.feels_like, "%.0f", false, units))
+        self:get_children_by_id("description")[1]:set_text(weather.weather[1].description)
+        self:get_children_by_id("wind")[1]:set_markup(
+            "Wind: " .. "<b>" .. weather.wind_speed .. "m/s (" .. to_direction(weather.wind_deg) .. ")</b>")
+        self:get_children_by_id("humidity")[1]:set_markup("Humidity: " .. "<b>" .. weather.humidity .. "%</b>")
+        self:get_children_by_id("uv")[1]:set_markup("UV: " .. uvi_index_color(weather.uvi))
     end
 }
-
 
 local daily_forecast_widget = {
     forced_width = 300,
@@ -384,9 +385,9 @@ local daily_forecast_widget = {
             if i > 5 then break end
             local day_forecast = wibox.widget {
                 {
-                    text = os.date('%a', tonumber(day.dt) + tonumber(timezone_offset)),
-                    align = 'center',
-                    font = font_name .. ' 9',
+                    text = os.date("%a", tonumber(day.dt) + tonumber(timezone_offset)),
+                    align = "center",
+                    font = font_name .. " 9",
                     widget = wibox.widget.textbox
                 },
                 {
@@ -398,13 +399,13 @@ local daily_forecast_widget = {
                             forced_height = 48,
                             widget = wibox.widget.imagebox
                         },
-                        align = 'center',
+                        align = "center",
                         layout = wibox.container.place
                     },
                     {
                         text = table.concat(split_str(day.weather[1].description), "\n"),
-                        font = font_name .. ' 8',
-                        align = 'center',
+                        font = font_name .. " 8",
+                        align = "center",
                         forced_height = 50,
                         widget = wibox.widget.textbox
                     },
@@ -412,15 +413,15 @@ local daily_forecast_widget = {
                 },
                 {
                     {
-                        text = gen_temperature_str(day.temp.day, '%.0f', false, units),
-                        align = 'center',
-                        font = font_name .. ' 9',
+                        text = gen_temperature_str(day.temp.day, "%.0f", false, units),
+                        align = "center",
+                        font = font_name .. " 9",
                         widget = wibox.widget.textbox
                     },
                     {
-                        text = gen_temperature_str(day.temp.night, '%.0f', false, units),
-                        align = 'center',
-                        font = font_name .. ' 9',
+                        text = gen_temperature_str(day.temp.night, "%.0f", false, units),
+                        align = "center",
+                        font = font_name .. " 9",
                         widget = wibox.widget.textbox
                     },
                     layout = wibox.layout.fixed.vertical
@@ -434,18 +435,18 @@ local daily_forecast_widget = {
 }
 
 function update_widget(widget, stdout, stderr)
-    if stderr ~= '' then
+    if stderr ~= "" then
         if not warning_shown then
-            if (stderr ~= 'curl: (52) Empty reply from server'
-            and stderr ~= 'curl: (28) Failed to connect to api.openweathermap.org port 443: Connection timed out'
-            and stderr:find('^curl: %(18%) transfer closed with %d+ bytes remaining to read$') ~= nil
+            if (stderr ~= "curl: (52) Empty reply from server"
+            and stderr ~= "curl: (28) Failed to connect to api.openweathermap.org port 443: Connection timed out"
+            and stderr:find("^curl: %(18%) transfer closed with %d+ bytes remaining to read$") ~= nil
             ) then
                 show_warning(stderr)
             end
             warning_shown = true
             tooltip:add_to_object(widget)
 
-            widget:connect_signal('mouse::enter', function() tooltip.text = stderr end)
+            widget:connect_signal("mouse::enter", function() tooltip.text = stderr end)
         end
         return
     end
@@ -454,9 +455,6 @@ function update_widget(widget, stdout, stderr)
     tooltip:remove_from_object(widget)
 
     local result = json.decode(stdout)
-
---    widget:set_image(ICONS_DIR .. icon_map[result.current.weather[1].icon] .. icons_extension)
---    widget:set_text(gen_temperature_str(result.current.temp, '%.0f', both_units_widget, units))
 
     current_weather_widget:update(result.current)
 
@@ -482,11 +480,6 @@ function update_widget(widget, stdout, stderr)
     })
 end
 
---awful.spawn.easy_async_with_shell(string.format(GET_FORECAST_CMD, owm_one_cal_api), function(out)
---    update_widget(weather_widget, out, "")
---end)
-------------------------------------
-
 local update_weather = function()
     awful.spawn.easy_async_with_shell(string.format(GET_FORECAST_CMD, owm_one_cal_api), function(out)
         update_widget(weather_widget, out, "")
@@ -495,11 +488,11 @@ end
 
 local weather_info = wibox.widget {
     weather_widget,
-   spacing = dpi(15),
+   spacing = 15,
    layout = wibox.layout.fixed.horizontal
 }
 
-local weather = create_box(weather_info, (col2_width/5)*4, 370, beautiful.bg_normal, true)
+local weather = widget_container(weather_info, (col2_width/5)*4, 370, beautiful.bg_normal, true)
 
 -- }}}
 
@@ -510,18 +503,18 @@ local weather = create_box(weather_info, (col2_width/5)*4, 370, beautiful.bg_nor
 local battery_icon = wibox.widget {
     forced_width = 20,
     forced_height = 20,
-    image = icon.png.info_battery,
+    image = icons.img.info_battery,
     widget = wibox.widget.imagebox
 }
 
 local battery_bar = wibox.widget {
-      max_value     = dpi(100),
+      max_value     = 100,
       forced_height = 25,
       forced_width  = (((col2_width/4)*3)/4)*3,
       border_width  = 0,
       margins       = {
-         top = dpi(8),
-         bottom = dpi(8),
+         top = 8,
+         bottom = 8,
       },
       background_color = colors.col_1D,
       color = colors.col_4D,
@@ -555,18 +548,18 @@ local battery = wibox.widget {
 local volume_icon = wibox.widget {
     forced_width = 20,
     forced_height = 20,
-    image = icon.png.info_volume,
+    image = icons.img.info_volume,
     widget = wibox.widget.imagebox
 }
 
 local volume_bar = wibox.widget {
-      max_value     = dpi(100),
+      max_value     = 100,
       forced_height = 25,
       forced_width  = (((col2_width/4)*3)/4)*3,
       border_width  = 0,
       margins       = {
-         top = dpi(8),
-         bottom = dpi(8),
+         top = 8,
+         bottom = 8,
       },
       background_color = colors.col_1D,
       color = colors.col_5D,
@@ -605,18 +598,18 @@ local volume = wibox.widget {
 local storage_icon = wibox.widget {
     forced_width = 20,
     forced_height = 20,
-    image = icon.png.info_storage,
+    image = icons.img.info_storage,
     widget = wibox.widget.imagebox
 }
 
 local storage_bar = wibox.widget {
-      max_value     = dpi(100),
+      max_value     = 100,
       forced_height = 25,
       forced_width  = (((col2_width/4)*3)/4)*3,
       border_width  = 0,
       margins       = {
-         top = dpi(8),
-         bottom = dpi(8),
+         top = 8,
+         bottom = 8,
       },
       background_color = colors.col_1D,
       color = colors.col_2D,
@@ -650,18 +643,21 @@ local storage = wibox.widget {
 local brightness_icon = wibox.widget {
     forced_width = 20,
     forced_height = 20,
-    image = icon.png.info_brightness,
+    image = icons.img.info_brightness,
     widget = wibox.widget.imagebox
 }
 
 local brightness_bar = wibox.widget {
+      -- IMPORTANT!!!!!!!!!!
+      -- This was the corresponding max brightness value for my system, yours may be different so check that
+      -- if you notice a wrong behaviour
       max_value     = 976,
       forced_height = 25,
       forced_width  = (((col2_width/4)*3)/4)*3,
       border_width  = 0,
       margins       = {
-         top = dpi(8),
-         bottom = dpi(8),
+         top = 8,
+         bottom = 8,
       },
       background_color = colors.col_1D,
       color = colors.col_3D,
@@ -698,17 +694,17 @@ local middle_top_box = wibox.widget {
          battery,
          brightness,
          volume,
-         spacing = dpi(1),
+         spacing = 1,
          layout = wibox.layout.fixed.vertical
       },
       margins = box_gap,
       layout = wibox.container.margin
    },
    nil,
-   expand = 'none',
+   expand = "none",
    layout = wibox.layout.align.vertical
 }
-local progress_box = create_box(middle_top_box, 3*(col2_width/4), 125, beautiful.bg_normal, true)
+local progress_box = widget_container(middle_top_box, 3*(col2_width/4), 125, beautiful.bg_normal, true)
 
 -- }}}
 
@@ -724,23 +720,23 @@ styles.normal  = {}
 styles.focus   = {
     fg_color = colors.col_1X,
    bg_color = colors.transparent,
-   markup   = function(t) return '<b>' .. t .. '</b>' end,
+   markup   = function(t) return "<b>" .. t .. "</b>" end,
 }
 styles.header  = { 
     fg_color = colors.col_5D,
    bg_color = color.color1.."00",
-   -- markup   = function(t) return '<b>' .. t .. '</b>' end,
-   markup   = function(t) return '<span font_desc="VictorMono Nerd Font 20"><b><i>' .. t .. '</i></b></span>' end,
+   -- markup   = function(t) return "<b>" .. t .. "</b>" end,
+   markup   = function(t) return '<span font_desc="VictorMono Nerd Font 20"><b><i>' .. t .. "</i></b></span>" end,
 }
 styles.weekday = { 
     fg_color = colors.col_2L,
    bg_color = color.color1.."00",
    padding  = 3,
-   markup   = function(t) return '<b>' .. t .. '</b>' end,
+   markup   = function(t) return "<b>" .. t .. "</b>" end,
 }
 local function decorate_cell(widget, flag, date)
-   if flag=='monthheader' and not styles.monthheader then
-      flag = 'header'
+   if flag=="monthheader" and not styles.monthheader then
+      flag = "header"
    end
    local props = styles[flag] or {}
    if props.markup and widget.get_text and widget.set_markup then
@@ -748,7 +744,7 @@ local function decorate_cell(widget, flag, date)
    end
    -- Change bg color for weekends
    local d = {year=date.year, month=(date.month or 1), day=(date.day or 1)}
-   local weekday = tonumber(os.date('%w', os.time(d)))
+   local weekday = tonumber(os.date("%w", os.time(d)))
    local default_fg = colors.white
    local default_bg = colors.transparent
    local ret = wibox.widget {
@@ -776,7 +772,7 @@ local calendar_widget = wibox.widget {
    widget   = wibox.widget.calendar.month
 }
 
-local calendar = create_box(calendar_widget, col1_width, 375, beautiful.bg_normal, true)
+local calendar = widget_container(calendar_widget, col1_width, 375, beautiful.bg_normal, true)
 
 -- }}}
 
@@ -792,7 +788,7 @@ local upgrade_info = wibox.widget {
 local upgrade_icon = wibox.widget {
     forced_width = 50,
     forced_height = 50,
-    image = icon.png.upgrade,
+    image = icons.img.upgrade,
     widget = wibox.widget.imagebox
 }
 
@@ -814,13 +810,13 @@ local upgrade_widget = wibox.widget {
     widget = wibox.container.margin
 }
 
-local upgrades = create_box(upgrade_widget, col2_width/4, 125, { type="png", file=texture_img }, true)
+local upgrades = widget_container(upgrade_widget, col2_width/4, 125, { type="png", file=texture_img }, true)
 
 upgrades:buttons(gears.table.join(
    awful.button({ }, 1, function ()
-      awful.spawn.easy_async_with_shell("paru -Qu > "..home.."/.upgrades", function(out)
-        awful.spawn(apps.terminal.." bat -nf --theme=base16 --paging=always "..home.."/.upgrades")
-        awful.spawn.easy_async_with_shell("sleep 1; rm "..home.."/.upgrades", function(out)
+      awful.spawn.easy_async_with_shell("paru -Qu > "..HOME.."/.upgrades", function(out)
+        awful.spawn(apps.terminal.." bat -nf --theme=base16 --paging=always "..HOME.."/.upgrades")
+        awful.spawn.easy_async_with_shell("sleep 1; rm "..HOME.."/.upgrades", function(out)
         end)
       end)
       dashboard_visibility()
@@ -834,11 +830,11 @@ upgrades:buttons(gears.table.join(
 local logo = wibox.widget {
     forced_width = 150,
     forced_height = 150,
-    image = icon.png.logo,
+    image = icons.img.logo,
     widget = wibox.widget.imagebox
 }
 
-local logo_box = create_box(logo, col3_width, 175, { type="png", file=texture_img }, true)
+local logo_box = widget_container(logo, col3_width, 175, { type="png", file=texture_img }, true)
 
 logo_box:buttons(gears.table.join(
    awful.button({ }, 1, function ()
@@ -853,15 +849,15 @@ logo_box:buttons(gears.table.join(
 local exit_icon = wibox.widget {
     forced_width = 20,
     forced_height = 20,
-    image = icon.png.exit,
+    image = icons.img.exit,
     widget = wibox.widget.imagebox
 }
 
-local exit_actions = create_box(exit_icon, col3_width/3, 60, nil, true)
+local exit_actions = widget_container(exit_icon, col3_width/3, 60, nil, true)
 
 exit_actions:buttons(gears.table.join(
    awful.button({ }, 1, function ()
-       awful.spawn.with_shell(home.."/.config/rofi/scripts/powermenu.sh")
+       awful.spawn.with_shell(HOME.."/.config/rofi/scripts/powermenu.sh")
       dashboard_visibility()
    end)
 ))
@@ -879,7 +875,7 @@ local uptime_info = wibox.widget {
 local get_uptime = function()
     awful.spawn.easy_async_with_shell("uptime -p | awk '{ s = \"\"; for (i = 2; i <= NF; i++) s = s $i \" \"; print s }'", function(out)
         -- Remove trailing whitespaces
-        out = out:gsub('^%s*(.-)%s*$', '%1')
+        out = out:gsub("^%s*(.-)%s*$", "%1")
         uptime_info.markup = "This system has been active for:\n<b>"..out.."</b>"
     end)
 end
@@ -887,7 +883,7 @@ end
 local uptime_logo = wibox.widget {
     forced_width = 50,
     forced_height = 50,
-    image = icon.png.uptime,
+    image = icons.img.uptime,
     widget = wibox.widget.imagebox
 }
 
@@ -903,7 +899,7 @@ local uptime_widget = wibox.widget {
     widget = wibox.container.margin
 }
 
-local uptime = create_box(uptime_widget, col2_width, 75, beautiful.bg_normal, true)
+local uptime = widget_container(uptime_widget, col2_width, 75, beautiful.bg_normal, true)
 
 -- }}}
 
@@ -926,7 +922,7 @@ local get_wifi_conn = function()
     -- Get wifi's SSID
     awful.spawn.easy_async_with_shell("nmcli --fields IN-USE,SSID device wifi list | grep \\* | awk '{ s = \"\"; for (i = 2; i <= NF; i++) s = s $i \" \"; print s }' | awk -v len=18 '{if (length($0) > len) print substr($0, 1, len-3) \"...\"; else print; }'", function(out)
         -- Remove trailing whitespaces
-        out = out:gsub('^%s*(.-)%s*$', '%1')
+        out = out:gsub("^%s*(.-)%s*$", "%1")
         if out == "" then
             wifi_conn.markup = "There's NO active\nwifi connection..."
         else
@@ -936,18 +932,18 @@ local get_wifi_conn = function()
     -- Get wifi signal strenght
     awful.spawn.easy_async_with_shell("nmcli dev wifi list | awk '/\\*/{if (NR!=1) {print $8}}'", function(out)
         -- Remove trailing whitespaces
-        out = out:gsub('^%s*(.-)%s*$', '%1')
+        out = out:gsub("^%s*(.-)%s*$", "%1")
         if out == "" then
-            wifi_logo.image = icon.png.wifi_null 
+            wifi_logo.image = icons.img.wifi_null 
         else
             if tonumber(out) > 75 then
-                wifi_logo.image = icon.png.wifi_high
+                wifi_logo.image = icons.img.wifi_high
             elseif tonumber(out) > 50 then
-                wifi_logo.image = icon.png.wifi_norm
+                wifi_logo.image = icons.img.wifi_norm
             elseif tonumber(out) > 25 then
-                wifi_logo.image = icon.png.wifi_midd
+                wifi_logo.image = icons.img.wifi_midd
             else
-                wifi_logo.image = icon.png.wifi_lows
+                wifi_logo.image = icons.img.wifi_lows
             end
         end
     end)
@@ -965,7 +961,7 @@ local wifi_widget = wibox.widget {
     widget = wibox.container.margin
 }
 
-local wifi_internet = create_box(wifi_widget, 7*(col1_width/8), 100, beautiful.bg_normal, true)
+local wifi_internet = widget_container(wifi_widget, 7*(col1_width/8), 100, beautiful.bg_normal, true)
 
 -- }}}
 
@@ -978,7 +974,7 @@ local fortune = wibox.widget {
 }
 
 local update_fortune = function()
-    awful.spawn.easy_async_with_shell("fortune -n 140 -s "..home.."/.config/misc/bible-fortune/bible",
+    awful.spawn.easy_async_with_shell("fortune -n 140 -s "..HOME.."/.config/misc/bible-fortune/bible",
     function(out)
         local array = {}
         for i in string.gmatch(out, "[^\r\n]+") do
@@ -1000,7 +996,7 @@ local fortune_widget = wibox.widget {
     widget = wibox.container.margin
 }
 
-local fortune_box = create_box(fortune_widget, col2_width, 100, beautiful.bg_normal, true)
+local fortune_box = widget_container(fortune_widget, col2_width, 100, beautiful.bg_normal, true)
 
 -- }}}
 
@@ -1009,11 +1005,11 @@ local fortune_box = create_box(fortune_widget, col2_width, 100, beautiful.bg_nor
 local pomo_icon = wibox.widget {
     forced_width = 30,
     forced_height = 30,
-    image = icon.png.pomodoro,
+    image = icons.img.pomodoro,
     widget = wibox.widget.imagebox
 }
 
-local pomodoro = create_box(pomo_icon, col2_width/5, 44, nil, true)
+local pomodoro = widget_container(pomo_icon, col2_width/5, 44, nil, true)
 
 pomodoro:buttons(gears.table.join(
    awful.button({ }, 1, function ()
@@ -1029,11 +1025,11 @@ pomodoro:buttons(gears.table.join(
 local news_icon = wibox.widget {
     forced_width = 30,
     forced_height = 30,
-    image = icon.png.news,
+    image = icons.img.news,
     widget = wibox.widget.imagebox
 }
 
-local news = create_box(news_icon, col2_width/5, 44, nil, true)
+local news = widget_container(news_icon, col2_width/5, 44, nil, true)
 
 news:buttons(gears.table.join(
    awful.button({ }, 1, function ()
@@ -1049,11 +1045,11 @@ news:buttons(gears.table.join(
 local night_icon = wibox.widget {
     forced_width = 30,
     forced_height = 30,
-    image = icon.png.night_mode,
+    image = icons.img.night_mode,
     widget = wibox.widget.imagebox
 }
 
-local night_mode = create_box(night_icon, col2_width/5, 44, nil, true)
+local night_mode = widget_container(night_icon, col2_width/5, 44, nil, true)
 
 night_mode:buttons(gears.table.join(
    awful.button({ }, 1, function ()
@@ -1074,11 +1070,11 @@ night_mode:buttons(gears.table.join(
 local help_icon = wibox.widget {
     forced_width = 30,
     forced_height = 30,
-    image = icon.png.help,
+    image = icons.img.help,
     widget = wibox.widget.imagebox
 }
 
-local help = create_box(help_icon, col2_width/5, 44, nil, true)
+local help = widget_container(help_icon, col2_width/5, 44, nil, true)
 
 help:buttons(gears.table.join(
    awful.button({ }, 1, function ()
@@ -1119,11 +1115,11 @@ local get_user_info = function()
         end)
     end)
     -- Get profile picture
-    awful.spawn.easy_async_with_shell("[[ -f "..home.."/.config/awesome/theme/pictures/$(whoami).png ]] && echo EXISTS", function(out)
+    awful.spawn.easy_async_with_shell("[[ -f "..HOME.."/.config/awesome/theme/pictures/$(whoami).png ]] && echo EXISTS", function(out)
         if out ~= "" then
-            profile_picture.image = home.."/.config/awesome/theme/pictures/"..os.getenv("USER")..".png"
+            profile_picture.image = HOME.."/.config/awesome/theme/pictures/"..os.getenv("USER")..".png"
         else
-            profile_picture.image = home.."/.config/awesome/theme/pictures/default-profile-picture.png"
+            profile_picture.image = HOME.."/.config/awesome/theme/pictures/default-profile-picture.png"
         end
     end)
 end
@@ -1140,18 +1136,19 @@ local user_info = wibox.widget {
     widget = wibox.container.margin
 }
 
-local user = create_box(user_info, col3_width, 225, beautiful.bg_normal, true)
+local user = widget_container(user_info, col3_width, 225, beautiful.bg_normal, true)
 
 -- }}}
 
 awesome.connect_signal("dashboard::update_info",
     function()
         -- COMMENT THE NEXT THREE LINES IF YOU'RE ONLY USING ONE WALLPAPER ON ALL TAGS 
-        image_file = gears.surface(home.."/.config/awesome/theme/wallpapers/wallpaper"..awful.tag.selected().name.."-blur.jpg")
+        image_file = gears.surface(HOME.."/.config/awesome/theme/wallpapers/wallpaper"..awful.tag.selected(1).name.."-blur.jpg")
         img_width, img_height = gears.surface.get_size(image_file)
         dashboard.bgimage = set_background_img
+        --
         update_weather()
-        calendar_widget.date = os.date('*t')
+        calendar_widget.date = os.date("*t")
         update_fortune()
         get_wifi_conn()
         get_user_info()
@@ -1173,6 +1170,7 @@ awesome.connect_signal("dashboard::update_info::volume",
         get_volume()
     end)
 
+-- This is the dashboard's structure
 dashboard:setup {
    nil,
    {
@@ -1180,12 +1178,12 @@ dashboard:setup {
       {
           -- FIRST COLUMN
          {
-            nil,--profile,
-            create_box(nil, col1_width, 60, colors.transparent, false),
+            nil,
+            widget_container(nil, col1_width, 60, colors.transparent, false),
             calendar,
-            create_box(nil, col1_width, 100, colors.transparent, false),
+            widget_container(nil, col1_width, 100, colors.transparent, false),
             {
-                create_box(nil, col1_width/8, 100, colors.transparent, false),
+                widget_container(nil, col1_width/8, 100, colors.transparent, false),
                 wifi_internet,
                 layout = wibox.layout.fixed.horizontal
             },
@@ -1216,12 +1214,12 @@ dashboard:setup {
          },
          -- THIRD COLUMN
          {
-            create_box(nil, col3_width, 10, colors.transparent, false),
+            widget_container(nil, col3_width, 10, colors.transparent, false),
             logo_box,
-            create_box(nil, col3_width, 100, colors.transparent, false),
+            widget_container(nil, col3_width, 100, colors.transparent, false),
             user,
             {
-                create_box(nil, (col3_width/3)*2, 10, colors.transparent, false),
+                widget_container(nil, (col3_width/3)*2, 10, colors.transparent, false),
                 exit_actions,
                 layout = wibox.layout.fixed.horizontal
             },

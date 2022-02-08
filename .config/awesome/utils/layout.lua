@@ -1,5 +1,11 @@
-local awful = require('awful')
-local bling = require("bling")
+--   vim:fileencoding=utf-8:foldmethod=marker
+--
+--   AwesomeWM available layouts definition file 
+--
+--   Author: Emilio Rivers (e-Rivers)
+
+local awful = require("awful")
+local bling = require("libs.bling")
 
 awful.layout.layouts = {
     bling.layout.centered,

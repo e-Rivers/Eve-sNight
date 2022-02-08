@@ -1,6 +1,13 @@
+--   vim:fileencoding=utf-8:foldmethod=marker
+--
+--   AwesomeWM Background processes and daemons that execute at startup, ergo,
+--   every time Awesome is reloaded
+--
+--   Author: Emilio Rivers (e-Rivers)
+
 local awful = require("awful")
 
--- Background processes that will execute automatically at startup
+-- Since they're meant to be background processes, they're spawned with a shell
 do 
     local background_processes = {
         -- Compositor

@@ -1,19 +1,17 @@
-local apps = {
-   terminal = 'kitty',
-   file_manager = 'thunar',
-   text_editor = 'alacritty --command nvim',
-   vscode = 'code',
-   brave = 'brave',
+--   vim:fileencoding=utf-8:foldmethod=marker
+--
+--   AwesomeWM default apps definition file 
+--
+--   Author: Emilio Rivers (e-Rivers)
+
+local default_apps = {
+   terminal = "kitty",
+   file_manager = "thunar",
+   text_editor = "kitty nvim",
+   brave = "brave",
    agenda = "superproductivity",
-   image_viewer = 'feh',
-   photo_editor = 'gimp',
-   screen_recorder = 'simplescreenrecorder',
-   screenshoot = 'xfce4-screenshooter',
-   launcher = 'rofi -show drun',
-   music = 'alacritty --command ncmpcpp',
-   reddit = 'brave -new-tab reddit.com',
-   youtube = 'brave -new-tab youtube.com',
-   firefox = 'firefox',
-   spotify = 'spotify'
+   image_viewer = "gthumb",
+   photo_editor = "gimp",
 }
-return apps
+
+return default_apps
