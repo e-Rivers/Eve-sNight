@@ -63,7 +63,7 @@ awful.rules.rules = {
     { rule = { class = "Brave-browser" },
         properties = { tag = "3", switchtotag = true } },
     { rule = { class = "Popcorn-Time" },
-        properties = { tag = "9", switchtotag = true } },
+        properties = { tag = "9", switchtotag = true, floating = false } },
     { rule = { class = "Gimp-2.10" },
         properties = { tag = "5", switchtotag = true } },
     { rule = { class = "zoom" },
