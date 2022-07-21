@@ -9,8 +9,8 @@
 
 <br/>
 <p align="center">
-<a href="https://github.com/e-Rivers/Eve-sNight/edit/main/GNOME-VERSION.md#d-e-p-e-n-d-e-n-c-i-e-s"><img width="150px" style="padding: 0 10px;" src="https://lh3.googleusercontent.com/pw/AM-JKLWyv_6jHczB8Op9L5YJwOWskpEQjUE8oiZGtoXpp_-M7CWZBLkBsXrtLiOQ6_welZ47koujI_-c-ETLlJjipy8NgmmxZPeVVQponAYmpLheGxeqHjsbbGQhwiA06oHicstVtYPkWmXz9Y2Wd5Y9Jz-U=w750-h250-no?authuser=0"></a>
-<a href="https://github.com/e-Rivers/Eve-sNight/edit/main/GNOME-VERSION.md#s-c-r-e-e-n-s-h-o-t-s"><img width="150px" style="padding: 0 10px;" src="https://lh3.googleusercontent.com/pw/AM-JKLVjpryXMg5zbx7wKzxWfmkFHkzimamVrRQC3uBS0T53lGPmf4RYewe_YUO9eKUFqoj_pjsx5XQAxJKFiwPU_WY0nTg324Ad-iKsD1sHo-32ie_UpVO7eXj6S9BYWTjJvsAih4CGFwCEAafcm5-1I3Zb=w750-h250-no?authuser=0"></a>
+<a href="https://github.com/e-Rivers/Eve-sNight/blob/main/GNOME-VERSION.md#d-e-p-e-n-d-e-n-c-i-e-s"><img width="150px" style="padding: 0 10px;" src="https://lh3.googleusercontent.com/pw/AM-JKLWyv_6jHczB8Op9L5YJwOWskpEQjUE8oiZGtoXpp_-M7CWZBLkBsXrtLiOQ6_welZ47koujI_-c-ETLlJjipy8NgmmxZPeVVQponAYmpLheGxeqHjsbbGQhwiA06oHicstVtYPkWmXz9Y2Wd5Y9Jz-U=w750-h250-no?authuser=0"></a>
+<a href="https://github.com/e-Rivers/Eve-sNight/blob/main/GNOME-VERSION.md#s-c-r-e-e-n-s-h-o-t-s"><img width="150px" style="padding: 0 10px;" src="https://lh3.googleusercontent.com/pw/AM-JKLVjpryXMg5zbx7wKzxWfmkFHkzimamVrRQC3uBS0T53lGPmf4RYewe_YUO9eKUFqoj_pjsx5XQAxJKFiwPU_WY0nTg324Ad-iKsD1sHo-32ie_UpVO7eXj6S9BYWTjJvsAih4CGFwCEAafcm5-1I3Zb=w750-h250-no?authuser=0"></a>
 </p>
 
 <br />
