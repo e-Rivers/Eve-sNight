@@ -6,7 +6,7 @@
   <h1>Eve's Night OS</h1>
   <i>Emilio Rivers' Linux dotfiles and LightDM configuration</i>
 </div>
-https://cutewallpaper.org/24/new-png/new-mongodb-drivers-for-php-and-hhvm-history-phpnewsio.png
+
 <br/>
 <p align="center">
 <a href="https://github.com/e-Rivers/Eve-sNight#d-e-p-e-n-d-e-n-c-i-e-s"><img width="150px" style="padding: 0 10px;" src="https://lh3.googleusercontent.com/pw/AM-JKLWyv_6jHczB8Op9L5YJwOWskpEQjUE8oiZGtoXpp_-M7CWZBLkBsXrtLiOQ6_welZ47koujI_-c-ETLlJjipy8NgmmxZPeVVQponAYmpLheGxeqHjsbbGQhwiA06oHicstVtYPkWmXz9Y2Wd5Y9Jz-U=w750-h250-no?authuser=0"></a>
@@ -23,6 +23,12 @@ https://cutewallpaper.org/24/new-png/new-mongodb-drivers-for-php-and-hhvm-histor
 
 <br />
 This is not really an Operating System, but you already knew that... These are my personal dotfiles for the Awesome Window Manager, Light Display Manager, Kitty Terminal Emulator and much more stuff to rice Arch Linux. I riced it so it wasn't only eye-candy, but also functional; nevertheless, there are features you may dislike or rather change (for example, I don't like having the dock or titlebars) so feel free to take whatever you want and adapt it to your needs.
+
+<br /><br />
+<img src="https://cutewallpaper.org/24/new-png/new-mongodb-drivers-for-php-and-hhvm-history-phpnewsio.png" width="125px" align="left">
+<p><b><h3>GNOME THEME</h3>New Eve's Night Theme but for Gnome DE. To know more about it go to its <a href="https://github.com/e-Rivers/Eve-sNight/blob/main/GNOME-VERSION.md">PAGE</a>.</b></p>
+
+<br/>
 
 ## S P E C S
 
@@ -141,8 +147,8 @@ This section only describes the file structure of Neovim, Rofi and AwesomeWM con
 
 I don't know if I'll be maintaining this for too long 'cause it's a massive time investment.
 
-- [ ] Make a better documentation and clean the code (comments, tabs and spaces, variables, etc.)
+- [X] Make a better documentation and clean the code (comments, tabs and spaces, variables, etc.)
 - [ ] Split the dashboard.lua file into separate ones (one for each widget) cause it's too long and can get messy
 - [ ] Hire the real TUX
 - [X] Tell everyone I use Arch, BTW
-- [ ] Fix some bugs (The ones I'm aware of; if you notice some bug or that there's something wrong with the system don't hesitate and tell me, don't say Lupus cause it's never Lupus)
+- [X] Fix some bugs (The ones I'm aware of; if you notice some bug or that there's something wrong with the system don't hesitate and tell me, don't say Lupus cause it's never Lupus)
